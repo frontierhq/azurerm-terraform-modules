@@ -1,6 +1,3 @@
-clean:
-	pipenv run python -c "import shutil; shutil.rmtree('test/.terraform')"
-
 install:
 	pipenv install --dev
 	pipenv run pre-commit install
