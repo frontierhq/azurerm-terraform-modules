@@ -1,0 +1,18 @@
+clean:
+	pipenv run python -c "import shutil; shutil.rmtree('test/.terraform')"
+
+install:
+	pipenv install --dev
+	pipenv run pre-commit install
+
+install_ci:
+	pipenv sync
+
+test: test.lint test.script
+
+test.lint:
+	pipenv run flake8 scripts
+	pipenv run yamllint .
+
+test.script:
+	pipenv run python scripts/test.py
