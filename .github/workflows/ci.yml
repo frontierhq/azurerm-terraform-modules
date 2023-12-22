@@ -35,5 +35,7 @@ jobs:
       - name: Install
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: make install_ci
+        env:
+          PIPENV_DEV: true
       - name: Test
         run: make test
