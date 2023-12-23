@@ -39,3 +39,10 @@ jobs:
           PIPENV_DEV: true
       - name: Test
         run: make test
+      - name: Download
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: 'frontierdigital/vertag'
+          version: 'v0.0.1-unstable1'
+          file: 'vertag_Linux_x86_64.tar.gz'
+          token: ${{ secrets.GITHUB_TOKEN }}
