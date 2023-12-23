@@ -52,5 +52,6 @@ jobs:
       - name: Vertag
         run: |
           ls -la
+          echo git tag
           git tag
           ./vertag apply --modules-dir .
