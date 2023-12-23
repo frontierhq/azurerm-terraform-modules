@@ -50,4 +50,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           extract: true
       - name: Vertag
-        run: ./vertag apply --modules-dir .
+        run: |
+          ls -la
+          git tag
+          ./vertag apply --modules-dir .
