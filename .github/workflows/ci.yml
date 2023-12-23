@@ -44,5 +44,8 @@ jobs:
         with:
           repository: 'gofrontier-com/vertag'
           latest: true
-          tarBall: true
+          fileName: 'vertag_Linux_x86_64.tar.gz'
           token: ${{ secrets.GITHUB_TOKEN }}
+          extract: true
+      - name: Test
+        run: ls -al
