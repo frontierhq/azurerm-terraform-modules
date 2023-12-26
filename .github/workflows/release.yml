@@ -17,6 +17,7 @@ jobs:
       version: ${{ steps.get_version.outputs.version }}
     steps:
       - id: get_version
+        name: Get version
         run: |
           VERSION="${GITHUB_REF#refs/*/}"
 
@@ -47,12 +48,12 @@ jobs:
           echo "version=${{ needs.preflight.outputs.version }}"
           echo "is_pre_release=${{ needs.preflight.outputs.is_pre_release }}"
 
-      # - id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     # tag_name: ${{ github.ref }}
-      #     release_name: ${{ needs.preflight.outputs.version }}
-      #     # draft: true
-      #     prerelease: ${{ needs.build.outputs.is_pre_release }}
+      - id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # tag_name: ${{ github.ref }}
+          release_name: ${{ needs.preflight.outputs.version }}
+          # draft: true
+          prerelease: ${{ needs.preflight.outputs.is_pre_release }}
