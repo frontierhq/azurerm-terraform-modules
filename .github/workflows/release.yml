@@ -63,7 +63,7 @@ jobs:
         run: |
           ASSET_PATH="${{ runner.temp }}"
           rm -rf "${ASSET_PATH}/module.tar.gz"
-          tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="test/" "modules/${{ needs.preflight.outputs.module_name }}"
+          tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="test/" --strip-components=2 "modules/${{ needs.preflight.outputs.module_name }}"
           echo "asset_path=$ASSET_PATH" >> "$GITHUB_OUTPUT"
 
       - id: create_release
