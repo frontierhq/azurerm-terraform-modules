@@ -58,6 +58,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - id: create_release_assets
+        name: Create release assets
+        run: |
+          ASSET_PATH="${{ runner.temp }}"
+          rm -rf "${ASSET_PATH}/module.tar.gz"
+          tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="test/" "modules/${{ needs.preflight.outputs.module_name }}}}"
+          echo "asset_path=$ASSET_PATH" >> "$GITHUB_OUTPUT"
+
       - id: create_release
         uses: actions/create-release@v1
         env:
@@ -67,18 +75,11 @@ jobs:
           release_name: ${{ needs.preflight.outputs.tag }}
           prerelease: ${{ needs.preflight.outputs.is_pre_release }}
 
-      - id: create_release_assets
-        name: Create release assets
-        run: |
-          MODULE_PATH="${{ env.TMPDIR }}/module.tar.gz"
-          tar -czvf "$MODULE_PATH" --exclude="test/" "modules/${{ needs.preflight.outputs.module_name }}}}"
-          echo "module_path=$MODULE_PATH" >> "$GITHUB_OUTPUT"
-
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ steps.create_release_assets.outputs.module_path }}
+          asset_path: "${{ steps.create_release_assets.outputs.asset_path }}/module.tar.gz"
           asset_name: module.tar.gz
           asset_content_type: application/gzip
