@@ -64,7 +64,7 @@ jobs:
           ASSET_PATH="${{ runner.temp }}"
           rm -rf "${ASSET_PATH}/module.tar.gz"
           pushd "modules/${{ needs.preflight.outputs.module_name }}"
-          tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="test/" ./
+          tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="./test" ./
           cp "README.md" "${ASSET_PATH}/README.md"
           popd
           echo "asset_path=$ASSET_PATH" >> "$GITHUB_OUTPUT"
