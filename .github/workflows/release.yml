@@ -14,14 +14,24 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       is_pre_release: ${{ steps.get_version.outputs.is_pre_release }}
+      module_name: ${{ steps.get_version.outputs.module_name }}
+      tag: ${{ steps.get_version.outputs.tag }}
       version: ${{ steps.get_version.outputs.version }}
     steps:
       - id: get_version
         name: Get version
         run: |
-          VERSION="${GITHUB_REF#refs/*/}"
+          TAG="${GITHUB_REF#refs/*/}"
 
-          if [[ "$VERSION" =~ ^v\d+\.\d+\.\d+$ ]]; then
+          if [[ "$TAG" =~ ^[\w-]+\/+\d+\.\d+\.\d+(-[\w\d]+)?$ ]]; then
+            MODULE_NAME=$(echo "$TAG" |cut -d/ -f 1)
+            VERSION=$(echo "$TAG" |cut -d/ -f 2)
+          else
+            echo "Invalid tag format: $TAG"
+            exit 1
+          fi
+
+          if [[ "$TAG" =~ ^v\d+\.\d+\.\d+$ ]]; then
             IS_PRE_RELEASE="false"
           else
             IS_PRE_RELEASE="true"
@@ -29,6 +39,10 @@ jobs:
 
           echo "is_pre_release=${IS_PRE_RELEASE}"
           echo "is_pre_release=${IS_PRE_RELEASE}" >> "$GITHUB_OUTPUT"
+          echo "module_name=${MODULE_NAME}"
+          echo "module_name=${MODULE_NAME}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
           echo "version=${VERSION}"
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
@@ -44,25 +58,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: |
-          echo "version=${{ needs.preflight.outputs.version }}"
-          echo "is_pre_release=${{ needs.preflight.outputs.is_pre_release }}"
-
       - id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ needs.preflight.outputs.version }}
-          # draft: true
+          release_name: ${{ needs.preflight.outputs.tag }}
           prerelease: ${{ needs.preflight.outputs.is_pre_release }}
 
-      # - uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ github.token }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: "${{ github.workspace }}/${{ needs.build.outputs.vsix_file_name }}"
-      #     asset_name: ${{ needs.build.outputs.vsix_file_name }}
-      #     asset_content_type: application/gzip
+      - id: create_release_assets
+        name: Create release assets
+        run: |
+          MODULE_PATH="${{ env.TMPDIR }}/module.tar.gz"
+          tar -czvf "$MODULE_PATH" --exclude="test/" "modules/${{ needs.preflight.outputs.module_name }}}}"
+          echo "module_path=$MODULE_PATH" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ steps.create_release_assets.outputs.module_path }}
+          asset_name: module.tar.gz
+          asset_content_type: application/gzip
