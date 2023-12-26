@@ -65,6 +65,7 @@ jobs:
           rm -rf "${ASSET_PATH}/module.tar.gz"
           tar -czvf "${ASSET_PATH}/module.tar.gz" --exclude="test/" --strip-components=2 "modules/${{ needs.preflight.outputs.module_name }}"
           echo "asset_path=$ASSET_PATH" >> "$GITHUB_OUTPUT"
+        working-directory: ${{ github.workspace }}
 
       - id: create_release
         uses: actions/create-release@v1
