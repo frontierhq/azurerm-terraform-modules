@@ -1,1 +1,1 @@
-# resource-group
+# Resource Group module
