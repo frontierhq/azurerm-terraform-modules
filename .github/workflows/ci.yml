@@ -34,11 +34,11 @@ jobs:
           extract: true
 
       - name: Run vertag
-        # env:
-        #   BUILD_BOT_PAT: ${{ secrets.BUILD_BOT_PAT }}
+        env:
+          BUILD_BOT_PAT: ${{ secrets.BUILD_BOT_PAT }}
         run: |
           ./vertag apply \
             --author-name "Build bot" \
             --author-email "build.bot@gofrontier.com" \
             --modules-dir "modules" \
-            --remote-url "https://${{secrets.GITHUB_TOKEN}}@github.com/gofrontier-com/azurerm-terraform-modules"
+            --remote-url "https://${BUILD_BOT_PAT}:x-oauth-basic@github.com/gofrontier-com/azurerm-terraform-modules"
