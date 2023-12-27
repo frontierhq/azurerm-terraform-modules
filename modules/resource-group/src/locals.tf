@@ -7,9 +7,8 @@ locals {
   }
 
   tags = {
-    Environment     = var.environment
-    WorkloadName    = var.workload_name
-    WorkloadType    = var.workload_type
-    WorkloadVersion = var.workload_version
+    Environment = var.environment
+    Location    = var.location
+    Zone        = var.zone
   }
 }
