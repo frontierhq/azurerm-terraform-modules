@@ -24,19 +24,20 @@ jobs:
           fetch-tags: true
           fetch-depth: 0
 
-      - name: Download
+      - name: Download vertag
         uses: robinraju/release-downloader@v1.8
         with:
-          repository: 'gofrontier-com/vertag'
+          repository: gofrontier-com/vertag
           latest: true
-          fileName: 'vertag_Linux_x86_64.tar.gz'
+          fileName: vertag_Linux_x86_64.tar.gz
           token: ${{ secrets.GITHUB_TOKEN }}
           extract: true
 
-      - name: Vertag
+      - name: Run vertag
         run: |
-          ls -la
-          echo git tag
-          git tag
-          ./vertag version
-          ./vertag apply --modules-dir modules --repo . --author-name "Build bot" --author-email "build.bot@gofrontier.com" --remote-url https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/gofrontier-com/azurerm-terraform-modules
+          ./vertag apply \
+            --modules-dir "${{ github.workspace }}/modules" \
+            --repo "${{ github.workspace }}" \
+            --author-name "Build bot" \
+            --author-email "build.bot@gofrontier.com" \
+            --remote-url https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/gofrontier-com/azurerm-terraform-modules
