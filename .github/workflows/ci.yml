@@ -37,4 +37,4 @@ jobs:
           ls -la
           echo git tag
           git tag
-          ./vertag apply --modules-dir .
+          ./vertag apply --modules-dir modules --repo .
