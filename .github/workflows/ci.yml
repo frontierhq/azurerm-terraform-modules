@@ -38,8 +38,7 @@ jobs:
           BUILD_BOT_PAT: ${{ secrets.BUILD_BOT_PAT }}
         run: |
           ./vertag apply \
-            --modules-dir "${{ github.workspace }}/modules" \
-            --repo "${{ github.workspace }}" \
             --author-name "Build bot" \
             --author-email "build.bot@gofrontier.com" \
+            --modules-dir "modules" \
             --remote-url "https://${BUILD_BOT_PAT}:x-oauth-basic@github.com/gofrontier-com/azurerm-terraform-modules"
