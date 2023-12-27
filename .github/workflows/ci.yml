@@ -37,4 +37,4 @@ jobs:
           ls -la
           echo git tag
           git tag
-          ./vertag apply --modules-dir modules --repo . --dry-run
+          ./vertag apply --modules-dir modules --repo . --dry-run --author-name "Build bot" --author-email "build.bot@gofrontier.com"
