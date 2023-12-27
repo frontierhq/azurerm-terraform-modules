@@ -41,4 +41,4 @@ jobs:
             --author-name "Build bot" \
             --author-email "build.bot@gofrontier.com" \
             --modules-dir "modules" \
-            --remote-url "https://${{secrets.GITHUB_TOKEN}}:x-oauth-basic@github.com/gofrontier-com/azurerm-terraform-modules"
+            --remote-url "https://${{secrets.GITHUB_TOKEN}}@github.com/gofrontier-com/azurerm-terraform-modules"
