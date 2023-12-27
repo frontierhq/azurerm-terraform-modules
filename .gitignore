@@ -1,0 +1,13 @@
+# ide
+.env
+.vscode
+
+# python
+.venv
+__pycache__
+
+# terraform
+.terraform
+.terraform.lock.hcl
+
+# other
