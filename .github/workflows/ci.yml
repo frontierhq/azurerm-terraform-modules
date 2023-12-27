@@ -3,39 +3,41 @@ name: CI
 
 on:
   push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "**"
   pull_request:
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Configure git
-        run: |
-          git config --global url."https://x-oauth-basic:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}".insteadOf https://github.com/${{ github.repository_owner }}
-      - id: get_python_version
-        name: Get Python version
-        run: |
-          set -euo pipefail
+    uses: ./.github/workflows/build.yml
 
-          python_version=$(cat ${GITHUB_WORKSPACE}/.python-version)
-          echo "Python version: ${python_version}"
-          echo "python_version=$python_version" >> "$GITHUB_OUTPUT"
-      - uses: actions/setup-python@v4
+  tag:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
         with:
-          python-version: ${{ steps.get_python_version.outputs.python_version }}
-      - name: Setup pipenv
-        run: python -m pip install --upgrade pipenv wheel
-      - id: cache-pipenv
-        uses: actions/cache@v3
+          fetch-tags: true
+          fetch-depth: 0
+
+      - name: Download vertag
+        uses: robinraju/release-downloader@v1.8
         with:
-          path: ~/.local/share/virtualenvs
-          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}-ci
-      - name: Install
-        if: steps.cache-pipenv.outputs.cache-hit != 'true'
-        run: make install_ci
-        env:
-          PIPENV_DEV: true
-      - name: Test
-        run: make test
+          repository: gofrontier-com/vertag
+          latest: true
+          fileName: vertag_Linux_x86_64.tar.gz
+          token: ${{ secrets.GITHUB_TOKEN }}
+          extract: true
+
+      - name: Run vertag
+        run: |
+          ./vertag apply \
+            --modules-dir "${{ github.workspace }}/modules" \
+            --repo "${{ github.workspace }}" \
+            --author-name "Build bot" \
+            --author-email "build.bot@gofrontier.com" \
+            --remote-url https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/gofrontier-com/azurerm-terraform-modules
