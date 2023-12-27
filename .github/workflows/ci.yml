@@ -38,4 +38,5 @@ jobs:
           ls -la
           echo git tag
           git tag
+          ./vertag version
           ./vertag apply --modules-dir modules --repo . --author-name "Build bot" --author-email "build.bot@gofrontier.com" --remote-url https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/gofrontier-com/azure-terraform-modules
