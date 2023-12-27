@@ -34,7 +34,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.local/share/virtualenvs
-          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}-ci
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}-dev
 
       - name: Install
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
