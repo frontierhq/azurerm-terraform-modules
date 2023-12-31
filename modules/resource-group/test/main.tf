@@ -5,10 +5,10 @@ provider "azurerm" {
 module "resource_group" {
   source = "../src"
 
-  environment = "bar"
-  identifier  = "baz"
+  environment = "foo"
+  identifier  = "bar"
   location    = "uksouth"
-  zone        = "bat"
+  zone        = "baz"
 
   tags = {
     Foo = "Bar"
