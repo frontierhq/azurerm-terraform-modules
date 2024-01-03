@@ -1,0 +1,33 @@
+---
+name: delete-prereleases
+
+on:
+  workflow_call:
+    inputs:
+      module_name_pattern:
+        description: The module name pattern to delete for, e.g. "*" or "resource-group/*"
+        type: string
+        required: true
+        default: "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dev-drprasad/delete-older-releases@v0.3.2
+        with:
+          delete_prerelease_only: true
+          delete_tags: true
+          delete_tag_pattern: ${{ github.event.inputs.module_name_pattern }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: actions/checkout@v4
+      #   with:
+      #     fetch-tags: true
+      #     fetch-depth: 0
+
+      # - name: Configure git
+      #   run: git config --global url."https://x-oauth-basic:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}".insteadOf https://github.com/${{ github.repository_owner }}
+
+      # - name: Delete unstable tags
+      #   run: git push -d origin $(git tag -l "*-unstable")
