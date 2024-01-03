@@ -68,9 +68,9 @@ Modules
      - Source URL
      - Links
    * - `key-vault <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__
-     - 1.0.0
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault-1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.0>`__
+     - 1.0.5
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault-1.0.5/module.tar.gz//src``
+     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.5>`__
    * - `resource-group <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - 1.0.0
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group-1.0.0/module.tar.gz//src``
@@ -79,3 +79,5 @@ Modules
 ------------
 Contributing
 ------------
+
+We welcome contributions to this repository. Please see `CONTRIBUTING.md <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/CONTRIBUTING.md>`_ for more information.
