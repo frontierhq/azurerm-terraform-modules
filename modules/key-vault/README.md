@@ -6,7 +6,7 @@ This module creates a [Key Vault](https://registry.terraform.io/providers/hashic
 
 ```hcl
 module "key_vault" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault-1.0.0/module.tar.gz//src"
+  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/[VERSION]/module.tar.gz//src"
 
   environment                = "dev"
   identifier                 = "secrets"
@@ -28,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.md>.
+See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.

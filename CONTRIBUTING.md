@@ -1,4 +1,4 @@
-# FILEPATH
+# Contributing
 
 Thank you for considering contributing to this project! Here are some guidelines to follow:
 
