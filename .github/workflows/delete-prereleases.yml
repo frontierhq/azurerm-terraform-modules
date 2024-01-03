@@ -11,7 +11,7 @@ on:
         description: The module name pattern to delete for, e.g. "*" or "resource-group/*"
         type: string
         required: true
-        default: "*"
+        default: "resource-group/*"
 
 jobs:
   build:
