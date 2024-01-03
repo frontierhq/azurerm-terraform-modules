@@ -60,7 +60,7 @@ jobs:
 
       - name: Update version in module README
         run: |
-          sed -i "s/[VERSION]/${{ needs.preflight.outputs.version }}/g" "modules/${{ needs.preflight.outputs.module_name }}/README.md"
+          sed -i "s/\[VERSION\]/${{ needs.preflight.outputs.version }}/g" "modules/${{ needs.preflight.outputs.module_name }}/README.md"
 
       - id: create_release_assets
         name: Create release assets
