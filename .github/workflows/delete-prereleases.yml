@@ -2,6 +2,9 @@
 name: delete-prereleases
 
 on:
+  push:
+    branches:
+      - "**"
   workflow_call:
     inputs:
       module_name_pattern:
