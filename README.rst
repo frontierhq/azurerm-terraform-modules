@@ -34,7 +34,7 @@ To use a module, add a `module block <https://www.terraform.io/docs/language/mod
 and specify the source as a `module archive <https://developer.hashicorp.com/terraform/language/modules/sources#fetching-archives-over-http>`_
 URL. The URL should be in the format:
 
-`https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/[module name]-[version]/module.tar.gz//src`.
+``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/[module name]-[version]/module.tar.gz//src``.
 
 For example:
 
@@ -67,11 +67,11 @@ Modules
      - Latest version
      - Source URL
      - Links
-   * - key-vault
+   * - `key-vault <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__
      - 1.0.0
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault-1.0.0/module.tar.gz//src``
      - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.0>`__
-   * - resource-group
+   * - `resource-group <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - 1.0.0
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group-1.0.0/module.tar.gz//src``
      - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.0>`__
