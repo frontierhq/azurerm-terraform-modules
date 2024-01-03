@@ -22,6 +22,7 @@ jobs:
           delete_prerelease_only: true
           delete_tags: true
           delete_tag_pattern: ${{ github.event.inputs.module_name_pattern }}
+          keep_latest: 0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - uses: actions/checkout@v4
