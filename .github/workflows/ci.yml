@@ -37,7 +37,7 @@ jobs:
         env:
           BUILD_BOT_PAT: ${{ secrets.BUILD_BOT_PAT }}
         run: |
-          ./vertag apply \
+          ./vertag \
             --author-name "Build bot" \
             --author-email "build.bot@gofrontier.com" \
             --modules-dir "modules" \
