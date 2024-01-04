@@ -15,10 +15,10 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
   log_analytics_destination_type = "AzureDiagnostics"
 
   dynamic "enabled_log" {
-    for_each = var.log_categories
+    for_each = var.log_category_groups
 
     content {
-      category = enabled_log.value
+      category_group = enabled_log.value
     }
   }
 
