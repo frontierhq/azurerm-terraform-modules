@@ -42,15 +42,15 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: make install_ci
 
-      - name: Generate README
-        run: |
-          set -euo pipefail
-
-          git branch main remotes/origin/main
-          make generate_readme branch=main
-
       # - name: Generate README
-      #   run: make generate_readme branch=${GITHUB_REF##*/}
+      #   run: |
+      #     set -euo pipefail
+
+      #     git branch main remotes/origin/main
+      #     make generate_readme branch=main
+
+      - name: Generate README
+        run: make generate_readme branch=${GITHUB_REF##*/}
 
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v5
