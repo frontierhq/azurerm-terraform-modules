@@ -17,7 +17,7 @@ module "virtual_network" {
   zone                       = "mtg"
 
   tags = {
-    WorkloadType = "MortgagesLZ/data-platform"
+    WorkloadType = "Shared/virtual-network"
   }
 }
 ```
