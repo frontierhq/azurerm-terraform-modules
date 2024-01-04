@@ -11,7 +11,7 @@ module "postgresql_flexible_server" {
   administrator_login        = "postgres"
   administrator_password     = random_password.postgres_admin.result
   environment                = "dev"
-  identifier                 = "nexusiq"
+  identifier                 = "buildagents"
   location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
   private_dns_zone_id        = data.azurerm_private_dns_zone.postgres.id
@@ -20,7 +20,7 @@ module "postgresql_flexible_server" {
   zone                       = "shd"
 
   tags = {
-    WorkloadType = "SharedServicesLZ/sonatype-platform"
+    WorkloadType = "SharedServicesLZ/build-agents"
   }
 }
 ```
