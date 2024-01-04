@@ -13,10 +13,10 @@ module "storage_account" {
   location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
   resource_group_name        = module.resource_group.name
-  zone                       = "shd"
+  zone                       = "bus"
 
   tags = {
-    WorkloadType = "Shared/sonatype-platform"
+    WorkloadType = "BusinessBankingLZ/document-service"
   }
 }
 ```

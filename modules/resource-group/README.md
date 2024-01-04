@@ -9,12 +9,12 @@ module "resource_group" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/[VERSION]/module.tar.gz//src"
 
   environment = "dev"
-  identifier  = "akscluster"
+  identifier  = "k8s"
   location    = "uksouth"
   zone        = "shd"
 
   tags = {
-    WorkloadType = "Shared/bootstrap"
+    WorkloadType = "CustomerBankingLZ/container-platform"
   }
 }
 ```
