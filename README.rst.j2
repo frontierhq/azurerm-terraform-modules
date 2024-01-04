@@ -62,18 +62,16 @@ Modules
 -------
 
 .. list-table::
-   :widths: 25 25 50 25
+   :widths: 25 25 50
    :header-rows: 1
 
    * - Module name
      - Latest version
      - Source URL
-     - Links
 {%- for module in modules %}
    * - `{{ module.name }} <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/{{ module.name }}>`__
-     - {{ module.version }}
+     - `{{ module.version }} <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/{{ module.name }}%2F{{ module.version }}>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/{{ module.name }}/{{ module.version }}/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/{{ module.name }}>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/{{ module.name }}%2F{{ module.version }}>`__
 {%- endfor %}
 
 ------------

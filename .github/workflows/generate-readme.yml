@@ -55,8 +55,8 @@ jobs:
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v5
         with:
+          body:
           branch: bot/update-readme
           commit-message: Update README [skip ci]
           title: Update README
-          # token: ${{ secrets.BUILD_BOT_PAT }}
-          token: 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
+          token: ${{ secrets.BUILD_BOT_PAT }}
