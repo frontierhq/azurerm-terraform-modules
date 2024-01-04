@@ -49,10 +49,10 @@ jobs:
       - name: Generate README
         run: |
           echo ${GITHUB_REF##*/}
-          # pipenv run python scripts/generate_readme.py main
+          git tag --merged main
+          pipenv run python scripts/generate_readme.py main
 
           # make generate_readme branch=${GITHUB_REF##*/}
-          make generate_readme branch=main
 
       # - name: Commit and push README
       #   run: |
