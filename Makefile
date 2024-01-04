@@ -1,3 +1,6 @@
+generate_readme:
+	pipenv run python scripts/generate_readme.py
+
 install:
 	pipenv install --dev
 	pipenv run pre-commit install

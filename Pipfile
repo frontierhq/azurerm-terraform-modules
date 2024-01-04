@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+jinja2 = "~=3.1.2"
+packaging = "~=23.2"
 python-terraform = "~=0.10.1"
 
 [dev-packages]
