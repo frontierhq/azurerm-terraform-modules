@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "azurerm_user_assigned_identity" {
+module "user_assigned_identity" {
   source = "../src"
 
   environment         = "foo"
