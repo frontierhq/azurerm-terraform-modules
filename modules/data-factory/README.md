@@ -16,7 +16,7 @@ module "data_factory" {
   zone                       = "mtg"
 
   tags = {
-    WorkloadType = "Mortgage/data-platform"
+    WorkloadType = "MortgagesLZ/data-platform"
   }
 }
 ```
