@@ -8,7 +8,7 @@ This module creates a [Virtual Network](https://registry.terraform.io/providers/
 module "virtual_network" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/virtual-network/[VERSION]/module.tar.gz//src"
 
-  address_space              " "10.0.0.0/24"
+  address_space              = "10.0.0.0/24"
   environment                = "dev"
   identifier                 = "mortgages"
   location                   = "uksouth"
