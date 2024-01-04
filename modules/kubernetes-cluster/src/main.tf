@@ -5,7 +5,7 @@ resource "azurerm_kubernetes_cluster" "main" {
 
   dns_prefix          = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   kubernetes_version  = var.kubernetes_version
-  node_resource_group = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}aksinfra"
+  node_resource_group = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
 
   azure_policy_enabled = true
 
