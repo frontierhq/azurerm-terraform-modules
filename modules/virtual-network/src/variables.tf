@@ -24,6 +24,13 @@ variable "log_analytics_workspace_id" {
 }
 
 # https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-virtualnetworks-logs
+variable "log_categories" {
+  type = list(string)
+  default = [
+    "VMProtectionAlerts"
+  ]
+}
+
 variable "log_category_groups" {
   type = list(string)
   default = [
