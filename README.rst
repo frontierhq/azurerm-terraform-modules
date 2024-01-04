@@ -13,7 +13,7 @@ About
 -----
 
 This repository contains a collection of Terraform modules based on the
-`AzureRM provider <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs>`_.
+`Azure Provider <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs>`_.
 They're intended to be used as part of a
 `module composition <https://developer.hashicorp.com/terraform/language/modules/develop/composition>`_
 approach to Terraform use. The modules implement a standardised approach to naming and tagging,
@@ -34,7 +34,7 @@ To use a module, add a `module block <https://www.terraform.io/docs/language/mod
 and specify the source as a `module archive <https://developer.hashicorp.com/terraform/language/modules/sources#fetching-archives-over-http>`_
 URL. The URL should be in the format:
 
-``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/[module name]-[version]/module.tar.gz//src``
+``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/[module-name]/[version]/module.tar.gz//src``
 
 For example:
 
@@ -71,6 +71,10 @@ Modules
      - 1.0.11
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/1.0.11/module.tar.gz//src``
      - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.11>`__
+   * - `postgresql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__
+     - 1.0.0
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.0/module.tar.gz//src``
+     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.0>`__
    * - `resource-group <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - 1.0.4
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.4/module.tar.gz//src``
