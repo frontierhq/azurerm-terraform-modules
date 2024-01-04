@@ -49,6 +49,7 @@ jobs:
       - name: Generate README
         run: |
           echo ${GITHUB_REF##*/}
+          git branch main remotes/origin/main
           git tag --merged main
           pipenv run python scripts/generate_readme.py main
 
