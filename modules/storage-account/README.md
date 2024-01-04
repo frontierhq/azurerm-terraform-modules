@@ -16,7 +16,7 @@ module "storage_account" {
   zone                       = "shd"
 
   tags = {
-    WorkloadType = "SharedServicesLZ/sonatype-platform"
+    WorkloadType = "Shared/sonatype-platform"
   }
 }
 ```
