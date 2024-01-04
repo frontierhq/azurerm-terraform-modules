@@ -59,4 +59,4 @@ jobs:
           commit-message: Update README [skip ci]
           title: Update README
           # token: ${{ secrets.BUILD_BOT_PAT }}
-          token: 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
+          token: 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
