@@ -38,7 +38,10 @@ def generate_readme():
     for module in modules:
         logging.debug(f"{module['name']}: {module['version']}")
 
-    environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
+    environment = jinja2.Environment(
+        keep_trailing_newline=True,
+        loader=jinja2.FileSystemLoader(os.getcwd()),
+    )
 
     template = environment.get_template("README.rst.j2")
     content = template.render({"modules": modules})
