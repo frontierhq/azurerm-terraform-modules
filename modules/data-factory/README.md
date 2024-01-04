@@ -5,7 +5,7 @@ This module creates a [Data Factory](https://registry.terraform.io/providers/has
 ## Usage
 
 ```hcl
-module "data_factpry" {
+module "data_factory" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/[VERSION]/module.tar.gz//src"
 
   environment                = "dev"
