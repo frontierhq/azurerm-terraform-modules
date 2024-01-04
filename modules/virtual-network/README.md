@@ -10,7 +10,7 @@ module "virtual_network" {
 
   address_space              = "10.0.0.0/24"
   environment                = "dev"
-  identifier                 = "mortgages"
+  identifier                 = "main"
   location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
   resource_group_name        = module.resource_group.name
