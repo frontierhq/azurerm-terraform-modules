@@ -1,5 +1,5 @@
 resource "azurerm_kubernetes_cluster" "main" {
-  name                = "aks-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  name                = "k8s-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   location            = var.location
   resource_group_name = var.resource_group_name
 
