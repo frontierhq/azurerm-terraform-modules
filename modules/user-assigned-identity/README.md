@@ -5,7 +5,7 @@ This module creates a [User Assigned Identity](https://registry.terraform.io/pro
 ## Usage
 
 ```hcl
-module "azurerm_user_assigned_identity" {
+module "user_assigned_identity" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
