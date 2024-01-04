@@ -1,5 +1,5 @@
 generate_readme:
-	pipenv run python scripts/generate_readme.py
+	pipenv run python scripts/generate_readme.py $(branch)
 
 install:
 	pipenv install --dev

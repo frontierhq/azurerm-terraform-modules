@@ -50,11 +50,6 @@ def generate_readme():
         readme.write(content)
         logging.info(f"{readme_path} written")
 
-    # exec("git", "checkout", "-B", "update-docs", silent=True)
-    # exec("git", "add", "README.rst", silent=True)
-    # exec("git", "commit", "-m", "Update docs", silent=True)
-    # exec("git", "push", "origin", "update-docs", "-f", silent=True)
-
 
 if __name__ == "__main__":
     logging.Logger.setLevel(logging.getLogger(), logging.DEBUG)
