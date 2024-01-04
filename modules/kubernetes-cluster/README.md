@@ -9,7 +9,7 @@ module "kubernetes_cluster" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/[VERSION]/module.tar.gz//src"
 
   environment                = "dev"
-  identifier                 = "sonatypeplatform"
+  identifier                 = "mortgages"
   kubernetes_version         = "1.28.1
   location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
@@ -18,7 +18,7 @@ module "kubernetes_cluster" {
   zone                       = "shd"
 
   tags = {
-    WorkloadType = "SharedServicesLZ/sonatype-platform"
+    WorkloadType = "CustomerBankingLZ/container-platform"
   }
 }
 ```
