@@ -5,16 +5,17 @@ This module creates a [User Assigned Identity](https://registry.terraform.io/pro
 ## Usage
 
 ```hcl
-module "resource_group" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/[VERSION]/module.tar.gz//src"
+module "azurerm_user_assigned_identity" {
+  source = "../src"
 
-  environment = "dev"
-  identifier  = "akscluster"
-  location    = "uksouth"
-  zone        = "shd"
+  environment         = "dev"
+  identifier          = "akscluster"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "shd"
 
   tags = {
-    WorkloadType = "Shared/bootstrap"
+    Foo = "Bar"
   }
 }
 ```
