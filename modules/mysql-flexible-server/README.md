@@ -6,7 +6,7 @@ This module creates a [MySQL Flexible Server](https://registry.terraform.io/prov
 
 ```hcl
 module "mysql_flexible_server" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql_flexible_server/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/[VERSION]/module.tar.gz//src"
 
   administrator_login        = "mysqladmin"
   administrator_password     = "P@ssw0rd1234!"
