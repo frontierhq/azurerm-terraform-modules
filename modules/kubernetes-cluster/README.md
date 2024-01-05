@@ -10,7 +10,7 @@ module "kubernetes_cluster" {
 
   environment                = "dev"
   identifier                 = "mortgages"
-  kubernetes_version         = "1.28.1
+  kubernetes_version         = "1.28.1"
   location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
   resource_group_name        = module.resource_group.name
