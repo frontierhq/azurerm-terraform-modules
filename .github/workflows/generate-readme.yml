@@ -48,5 +48,5 @@ jobs:
           body:
           branch: bot/update-readme
           commit-message: Update README [skip ci]
-          title: Update README
+          title: Update README [skip ci]
           token: ${{ secrets.BUILD_BOT_PAT }}
