@@ -41,7 +41,7 @@ For example:
 .. code:: hcl
 
         module "resource_group" {
-            source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group-1.0.0/module.tar.gz//src"
+            source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.0/module.tar.gz//src"
 
             environment = "dev"
             identifier  = "k8s"
@@ -60,49 +60,39 @@ Modules
 -------
 
 .. list-table::
-   :widths: 25 25 50 25
+   :widths: 25 25 50
    :header-rows: 1
 
    * - Module name
      - Latest version
      - Source URL
-     - Links
    * - `data-factory <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/data-factory>`__
-     - 1.0.0
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/data-factory%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/data-factory>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/data-factory%2F1.0.0>`__
    * - `firewall-policy <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/firewall-policy>`__
-     - 1.0.0
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/firewall-policy%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/firewall-policy/1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/firewall-policy>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/firewall-policy%2F1.0.0>`__
    * - `key-vault <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__
-     - 1.0.11
+     - `1.0.11 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.11>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/1.0.11/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/key-vault>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.11>`__
-   * - `kubernetes_cluster <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes_cluster>`__
-     - 1.0.0
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes_cluster/1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes_cluster>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes_cluster%2F1.0.0>`__
+   * - `kubernetes-cluster <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes-cluster>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/1.0.0/module.tar.gz//src``
    * - `postgresql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__
-     - 1.0.1
+     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.1/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
    * - `resource-group <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__
-     - 1.0.4
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.4/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.4>`__
+     - `1.0.5 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.5>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.5/module.tar.gz//src``
    * - `storage-account <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/storage-account>`__
-     - 1.0.1
+     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/1.0.1/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/storage-account>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.0.1>`__
    * - `user-assigned-identity <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/user-assigned-identity>`__
-     - 1.0.0
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/user-assigned-identity%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/user-assigned-identity>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/user-assigned-identity%2F1.0.0>`__
    * - `virtual-network <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/virtual-network>`__
-     - 1.0.0
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/virtual-network%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/virtual-network/1.0.0/module.tar.gz//src``
-     - `Code <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/virtual-network>`__ `Release <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/virtual-network%2F1.0.0>`__
 
 ------------
 Contributing
