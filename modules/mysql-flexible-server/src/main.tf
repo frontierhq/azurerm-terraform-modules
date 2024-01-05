@@ -1,11 +1,11 @@
 resource "azurerm_mysql_flexible_server" "main" {
+  name                = "mysql-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  resource_group_name = var.resource_group_name
+  location            = var.location
 
   administrator_login    = var.administrator_login
   administrator_password = var.administrator_password
   backup_retention_days  = var.backup_retention_days
-  location               = var.location
-  name                   = "mysql-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  resource_group_name    = var.resource_group_name
   sku_name               = var.sku_name
 
   tags = merge(var.tags, local.tags)
