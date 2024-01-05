@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - add-readme-generation
+      - main
   workflow_dispatch:
 
 jobs:
