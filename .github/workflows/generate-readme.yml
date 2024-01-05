@@ -1,0 +1,52 @@
+---
+name: Generate README
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
+      - id: get_python_version
+        name: Get Python version
+        run: |
+          set -euo pipefail
+
+          python_version=$(cat ${GITHUB_WORKSPACE}/.python-version)
+          echo "Python version: ${python_version}"
+          echo "python_version=$python_version" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ steps.get_python_version.outputs.python_version }}
+
+      - name: Setup pipenv
+        run: python -m pip install --upgrade pipenv wheel
+
+      - id: cache-pipenv
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+
+      - name: Install
+        if: steps.cache-pipenv.outputs.cache-hit != 'true'
+        run: make install_ci
+
+      - name: Generate README
+        run: make generate_readme branch=${GITHUB_REF##*/}
+
+      - name: Commit, push and create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          body:
+          branch: bot/update-readme
+          commit-message: Update README [skip ci]
+          title: Update README [skip ci]
+          token: ${{ secrets.BUILD_BOT_PAT }}
