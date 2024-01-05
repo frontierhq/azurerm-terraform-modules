@@ -50,7 +50,7 @@ variable "resource_group_name" {
 
 variable "sku_name" {
   type    = string
-  default = "Standard_D2ds_v4"
+  default = "B_Standard_B1s"
 }
 
 variable "tags" {
