@@ -2,10 +2,6 @@
 name: Generate README
 
 on:
-  push:
-    branches:
-      - add-readme-generation
-      - main
   workflow_dispatch:
 
 jobs:
@@ -44,14 +40,7 @@ jobs:
         run: make install_ci
 
       - name: Generate README
-        run: |
-          set -euo pipefail
-
-          git branch main remotes/origin/main
-          make generate_readme branch=main
-
-      # - name: Generate README
-      #   run: make generate_readme branch=${GITHUB_REF##*/}
+        run: make generate_readme branch=${GITHUB_REF##*/}
 
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v5
