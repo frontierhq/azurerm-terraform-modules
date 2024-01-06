@@ -34,9 +34,12 @@ resource "azurerm_kubernetes_cluster" "main" {
     tags = merge(var.tags, local.tags)
   }
 
-  api_server_access_profile {
-    authorized_ip_ranges     = var.authorized_ip_ranges
-    vnet_integration_enabled = false
+  dynamic "api_server_access_profile" {
+    for_each = length(var.authorized_ip_ranges) > 0 ? [{}] : []
+
+    content {
+      authorized_ip_ranges = var.authorized_ip_ranges
+    }
   }
 
   identity {
