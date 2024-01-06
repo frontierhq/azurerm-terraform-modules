@@ -30,10 +30,14 @@ variable "log_analytics_workspace_id" {
 
 # https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-dbformysql-flexibleservers-logs
 variable "log_categories" {
+  type    = list(string)
+  default = []
+}
+
+variable "log_category_groups" {
   type = list(string)
   default = [
-    "MySqlAuditLogs",
-    "MySqlSlowLogs"
+    "audit"
   ]
 }
 
@@ -50,7 +54,7 @@ variable "resource_group_name" {
 
 variable "sku_name" {
   type    = string
-  default = "Standard_D2ds_v4"
+  default = "B_Standard_B1s"
 }
 
 variable "tags" {

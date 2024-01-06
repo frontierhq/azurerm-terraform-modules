@@ -9,6 +9,12 @@ resource "azurerm_mysql_flexible_server" "main" {
   sku_name               = var.sku_name
 
   tags = merge(var.tags, local.tags)
+
+  lifecycle {
+    ignore_changes = [
+      zone,
+    ]
+  }
 }
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
@@ -22,11 +28,14 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
 
     content {
       category = enabled_log.value
+    }
+  }
 
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
+  dynamic "enabled_log" {
+    for_each = var.log_category_groups
+
+    content {
+      category_group = enabled_log.value
     }
   }
 
@@ -35,11 +44,6 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
 
     content {
       category = metric.value
-
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
     }
   }
 }
