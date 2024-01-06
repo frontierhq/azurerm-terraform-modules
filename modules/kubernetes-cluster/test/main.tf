@@ -5,14 +5,15 @@ provider "azurerm" {
 module "kubernetes_cluster" {
   source = "../src"
 
-  environment                = "foo"
-  identifier                 = "bar"
+  environment         = "foo"
+  identifier          = "bar"
+  location            = "uksouth"
+  resource_group_name = "qux"
+  zone                = "corge"
+
   kubernetes_version         = "1.2.3"
-  location                   = "uksouth"
   log_analytics_workspace_id = "baz"
-  resource_group_name        = "qux"
   subnet_id                  = "quux"
-  zone                       = "corge"
 
   tags = {
     Foo = "Bar"
