@@ -76,11 +76,17 @@ Modules
      - `1.0.11 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.11>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/1.0.11/module.tar.gz//src``
    * - `kubernetes-cluster <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes-cluster>`__
-     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F1.0.0>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/1.0.0/module.tar.gz//src``
+     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F1.0.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/1.0.1/module.tar.gz//src``
+   * - `mysql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/mysql-flexible-server>`__
+     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/mysql-flexible-server%2F1.0.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/1.0.1/module.tar.gz//src``
    * - `postgresql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__
      - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.1/module.tar.gz//src``
+   * - `private-endpoint <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-endpoint>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-endpoint%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-endpoint/1.0.0/module.tar.gz//src``
    * - `resource-group <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - `1.0.5 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.5>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.5/module.tar.gz//src``
