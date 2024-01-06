@@ -6,7 +6,7 @@ variable "identifier" {
   type = string
 }
 
-variable "inbound_endpoint_subnet_address_prefix" {
+variable "inbound_endpoint_subnet_id" {
   type    = string
   default = null
 }
@@ -15,7 +15,7 @@ variable "location" {
   type = string
 }
 
-variable "outbound_endpoint_subnet_address_prefix" {
+variable "outbound_endpoint_subnet_id" {
   type    = string
   default = null
 }
