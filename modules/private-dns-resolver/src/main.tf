@@ -21,7 +21,7 @@ resource "azurerm_private_dns_resolver_inbound_endpoint" "main" {
 }
 
 resource "azurerm_private_dns_resolver_outbound_endpoint" "main" {
-  count = var.inbound_endpoint_subnet_id != null ? 1 : 0
+  count = var.outbound_endpoint_subnet_id != null ? 1 : 0
 
   name                    = "main"
   private_dns_resolver_id = azurerm_private_dns_resolver.main.id
