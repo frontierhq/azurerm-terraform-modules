@@ -27,15 +27,24 @@ resource "azurerm_kubernetes_cluster" "main" {
     vnet_subnet_id              = var.subnet_id
     zones                       = var.zones
 
+    upgrade_settings {
+      max_surge = "10%"
+    }
+
     tags = merge(var.tags, local.tags)
   }
 
-  api_server_access_profile {
-    authorized_ip_ranges = var.authorized_ip_ranges
+  dynamic "api_server_access_profile" {
+    for_each = length(var.authorized_ip_ranges) > 0 ? [{}] : []
+
+    content {
+      authorized_ip_ranges = var.authorized_ip_ranges
+    }
   }
 
   identity {
-    type = "SystemAssigned"
+    type         = "SystemAssigned"
+    identity_ids = []
   }
 
   key_vault_secrets_provider {

@@ -8,14 +8,15 @@ This module creates a [Kubernetes Cluster](https://registry.terraform.io/provide
 module "kubernetes_cluster" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/[VERSION]/module.tar.gz//src"
 
-  environment                = "dev"
-  identifier                 = "mortgages"
+  environment         = "dev"
+  identifier          = "creditcards"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "cus"
+
   kubernetes_version         = "1.28.1"
-  location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  resource_group_name        = module.resource_group.name
   subnet_id                  = data.azurerm_subnet.k8s.id
-  zone                       = "shd"
 
   tags = {
     WorkloadType = "CustomerBankingLZ/container-platform"
