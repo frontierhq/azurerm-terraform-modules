@@ -5,13 +5,8 @@ variable "admin_group_object_ids" {
 
 variable "authorized_ip_ranges" {
   type    = list(string)
-  default = null
+  default = []
 }
-
-# variable "azure_rbac_enabled" {
-#   type    = bool
-#   default = true
-# }
 
 variable "enable_auto_scaling" {
   type    = bool
