@@ -2,11 +2,6 @@ variable "address_space" {
   type = string
 }
 
-variable "dns_servers" {
-  type    = list(string)
-  default = []
-}
-
 variable "environment" {
   type = string
 }
