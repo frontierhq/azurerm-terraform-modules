@@ -76,14 +76,17 @@ Modules
      - `1.0.11 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.11>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/1.0.11/module.tar.gz//src``
    * - `kubernetes-cluster <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes-cluster>`__
-     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F1.0.1>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/1.0.1/module.tar.gz//src``
+     - `1.1.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F1.1.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/1.1.1/module.tar.gz//src``
    * - `mysql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/mysql-flexible-server>`__
-     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/mysql-flexible-server%2F1.0.1>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/1.0.1/module.tar.gz//src``
+     - `1.0.3 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/mysql-flexible-server%2F1.0.3>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/1.0.3/module.tar.gz//src``
    * - `postgresql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__
      - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.1/module.tar.gz//src``
+   * - `private-dns-resolver <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-dns-resolver>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-dns-resolver%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-dns-resolver/1.0.0/module.tar.gz//src``
    * - `private-endpoint <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-endpoint>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-endpoint%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-endpoint/1.0.0/module.tar.gz//src``
@@ -97,8 +100,8 @@ Modules
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/user-assigned-identity%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/1.0.0/module.tar.gz//src``
    * - `virtual-network <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/virtual-network>`__
-     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/virtual-network%2F1.0.0>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/virtual-network/1.0.0/module.tar.gz//src``
+     - `2.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/virtual-network%2F2.0.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/virtual-network/2.0.1/module.tar.gz//src``
 
 ------------
 Contributing
