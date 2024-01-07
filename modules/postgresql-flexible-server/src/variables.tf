@@ -33,7 +33,8 @@ variable "postgres_version" {
 }
 
 variable "private_dns_zone_id" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "resource_group_name" {
@@ -51,7 +52,8 @@ variable "storage_mb" {
 }
 
 variable "subnet_id" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "tags" {
