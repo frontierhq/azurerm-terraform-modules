@@ -5,7 +5,7 @@ This module creates a [Cognitive Services Account](https://registry.terraform.io
 ## Usage
 
 ```hcl
-esource "azurerm_cognitive_account" "main" {
+module "azurerm_cognitive_account" "main" {
   name                               = "cog-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   kind                               = "ImmersiveReader"
   location                           = "uksouth"
