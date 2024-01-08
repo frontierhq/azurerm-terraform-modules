@@ -1,4 +1,4 @@
-# MySQL Flexible Server
+# Microsoft SQL Azure Database Server
 
 This module creates a [Microsoft SQL Azure Database Server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
