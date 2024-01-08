@@ -103,8 +103,14 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
   }
 }
 
-resource "azurerm_role_assignment" "node_resource_group_network_contributor" {
-  scope                = "${split(var.resource_group_name, azurerm_kubernetes_cluster.main.id)[0]}${azurerm_kubernetes_cluster.main.node_resource_group}"
+resource "azurerm_role_assignment" "identity_virtual_network_reader" {
+  scope                = data.azurerm_virtual_network.main.id
+  role_definition_name = "Reader"
+  principal_id         = azurerm_kubernetes_cluster.main.identity[0].principal_id
+}
+
+resource "azurerm_role_assignment" "identity_virtual_network_network_contributor" {
+  scope                = data.azurerm_virtual_network.main.id
   role_definition_name = "Network Contributor"
   principal_id         = azurerm_kubernetes_cluster.main.identity[0].principal_id
 }
