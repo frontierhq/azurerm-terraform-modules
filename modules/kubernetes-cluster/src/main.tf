@@ -102,3 +102,15 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
     category = "AllMetrics"
   }
 }
+
+resource "azurerm_role_assignment" "identity_virtual_network_reader" {
+  scope                = data.azurerm_virtual_network.main.id
+  role_definition_name = "Reader"
+  principal_id         = azurerm_kubernetes_cluster.main.identity[0].principal_id
+}
+
+resource "azurerm_role_assignment" "identity_virtual_network_network_contributor" {
+  scope                = data.azurerm_virtual_network.main.id
+  role_definition_name = "Network Contributor"
+  principal_id         = azurerm_kubernetes_cluster.main.identity[0].principal_id
+}
