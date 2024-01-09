@@ -1,3 +1,8 @@
+variable "dns_servers" {
+  type    = list(string)
+  default = []
+}
+
 variable "environment" {
   type = string
 }
@@ -7,10 +12,6 @@ variable "identifier" {
 }
 
 variable "location" {
-  type = string
-}
-
-variable "log_analytics_workspace_id" {
   type = string
 }
 

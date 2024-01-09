@@ -1,11 +1,12 @@
 resource "azurerm_point_to_site_vpn_gateway" "main" {
   name                = "p2svpngw-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = module.resource_group.name
 
+  dns_servers                 = var.dns_servers
+  scale_unit                  = var.scale_unit
   virtual_hub_id              = var.virtual_hub_id
   vpn_server_configuration_id = var.vpn_server_configuration_id
-  scale_unit                  = var.scale_unit
 
   connection_configuration {
     name = "main"
@@ -17,5 +18,3 @@ resource "azurerm_point_to_site_vpn_gateway" "main" {
 
   tags = merge(var.tags, local.tags)
 }
-
-# Diag settings?
