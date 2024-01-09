@@ -1,4 +1,4 @@
-# Virtual Network
+# VPN Server Configuration
 
 This module creates a [VPN Server Configuration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/vpn_server_configuration)
 
