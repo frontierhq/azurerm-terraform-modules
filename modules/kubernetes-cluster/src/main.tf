@@ -35,7 +35,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   }
 
   dynamic "api_server_access_profile" {
-    for_each = len(var.authorized_ip_ranges) > 0 ? [{}] : []
+    for_each = length(var.authorized_ip_ranges) > 0 ? [{}] : []
 
     content {
       authorized_ip_ranges = api_server_access_profile.value.authorized_ip_ranges
