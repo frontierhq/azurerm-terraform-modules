@@ -11,9 +11,10 @@ module "point_to_site_vpn_gateway" {
   resource_group_name = "qux"
   zone                = "corge"
 
-  virtual_hub_id                           = "corge"
+  log_analytics_workspace_id               = "grault"
+  virtual_hub_id                           = "garply"
   vpn_client_address_pool_address_prefixes = []
-  vpn_server_configuration_id              = "grault"
+  vpn_server_configuration_id              = "waldo"
 
   tags = {
     Foo = "Bar"

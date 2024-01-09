@@ -1,7 +1,7 @@
 resource "azurerm_point_to_site_vpn_gateway" "main" {
   name                = "p2svpngw-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   location            = var.location
-  resource_group_name = module.resource_group.name
+  resource_group_name = var.resource_group_name
 
   dns_servers                 = var.dns_servers
   scale_unit                  = var.scale_unit
@@ -21,7 +21,7 @@ resource "azurerm_point_to_site_vpn_gateway" "main" {
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
   name                       = "log-analytics"
-  target_resource_id         = azurerm_key_vault.main.id
+  target_resource_id         = azurerm_point_to_site_vpn_gateway.main.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
