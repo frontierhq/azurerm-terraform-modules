@@ -5,7 +5,7 @@ This module creates a [VPN Server Configuration](https://registry.terraform.io/p
 ## Usage
 
 ```hcl
-module "virtual_network" {
+module "vpn_server_configuration" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/vpn-server-configuration/[VERSION]/module.tar.gz//src"
 
   environment         = "con"
