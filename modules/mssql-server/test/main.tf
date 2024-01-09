@@ -11,9 +11,6 @@ module "azurerm_mssql_server" {
   environment                  = "bar"
   identifier                   = "baz"
   location                     = "uksouth"
-  workload_name                = "foo"
-  workload_type                = "foo/bar"
-  workload_version             = "1.0.0"
   zone                         = "bat"
 
   tags = {
