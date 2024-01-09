@@ -33,6 +33,21 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
+# https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-containerservice-managedclusters-logs
+variable "log_categories" {
+  type = list(string)
+  default = [
+    "kube-scheduler"
+  ]
+}
+
+variable "metric_categories" {
+  type = list(string)
+  default = [
+    "AllMetrics"
+  ]
+}
+
 variable "network_plugin" {
   type    = string
   default = "kubenet"
