@@ -3,11 +3,9 @@ resource "azurerm_firewall" "main" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  dns_servers        = var.dns_servers
   firewall_policy_id = var.firewall_policy_id
-
-  sku_name = var.sku_name
-  sku_tier = var.sku_tier
+  sku_name           = var.sku_name
+  sku_tier           = var.sku_tier
 
   dynamic "virtual_hub" {
     for_each = var.virtual_hub_id != null ? [{}] : []
