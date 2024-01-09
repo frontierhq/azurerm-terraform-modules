@@ -37,18 +37,6 @@ variable "worker_count" {
   default = null
 }
 
-variable "workload_name" {
-  type = string
-}
-
-variable "workload_type" {
-  type = string
-}
-
-variable "workload_version" {
-  type = string
-}
-
 variable "zone" {
   type = string
 }
