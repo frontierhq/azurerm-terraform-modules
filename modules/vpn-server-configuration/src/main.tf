@@ -6,10 +6,14 @@ resource "azurerm_vpn_server_configuration" "main" {
   vpn_authentication_types = var.vpn_authentication_types
   vpn_protocols            = var.vpn_protocols
 
-  azure_active_directory_authentication {
-    audience = data.azuread_service_principal.azure_vpn.client_id
-    issuer   = "https://sts.windows.net/${data.azurerm_client_config.main.tenant_id}/"
-    tenant   = "https://login.microsoftonline.com/${data.azurerm_client_config.main.tenant_id}/"
+  dynamic "azure_active_directory_authentication" {
+    for_each = contains(var.vpn_authentication_types, "AAD") ? [{}] : []
+
+    content {
+      audience = data.azuread_service_principal.azure_vpn.client_id
+      issuer   = "https://sts.windows.net/${data.azurerm_client_config.main.tenant_id}/"
+      tenant   = "https://login.microsoftonline.com/${data.azurerm_client_config.main.tenant_id}/"
+    }
   }
 
   tags = merge(var.tags, local.tags)
