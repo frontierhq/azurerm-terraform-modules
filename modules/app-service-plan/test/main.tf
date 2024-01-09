@@ -11,9 +11,6 @@ module "app_service_plan" {
   os_type             = "boo"
   resource_group_name = "bar"
   sku_name            = "far"
-  workload_name       = "foo"
-  workload_type       = "foo/bar"
-  workload_version    = "1.0.0"
   zone                = "bat"
 
   tags = {
