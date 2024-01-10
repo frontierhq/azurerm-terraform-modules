@@ -45,7 +45,7 @@ variable "resource_group_name" {
 
 variable "sku_name" {
   type    = string
-  default = "AZFW_VNet"
+  default = "AZFW_Hub"
 }
 
 variable "sku_tier" {
