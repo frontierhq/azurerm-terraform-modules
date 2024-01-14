@@ -1,15 +1,17 @@
 resource "azurerm_mssql_server" "main" {
+  name                = "mssql-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
   minimum_tls_version          = var.minimum_tls_version
-  location                     = var.location
-  name                         = "mssql-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  resource_group_name          = var.resource_group_name
   version                      = var.sql_server_version
   administrator_login          = var.azuread_administrator.azuread_authentication_only ? null : var.administrator_username
   administrator_login_password = var.azuread_administrator.azuread_authentication_only ? null : var.administrator_password
-  tags                         = merge(var.tags, local.tags)
+
   identity {
     type = "SystemAssigned"
   }
+
   dynamic "azuread_administrator" {
     for_each = var.azuread_administrator != null ? [{}] : []
     content {
@@ -18,6 +20,8 @@ resource "azurerm_mssql_server" "main" {
       object_id                   = var.azuread_administrator.object_id
     }
   }
+
+  tags = merge(var.tags, local.tags)
 }
 
 
