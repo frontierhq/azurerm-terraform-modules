@@ -1,6 +1,6 @@
 # MS SQL Server
 
-This module creates a [MS SQL Server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
+This module creates a [MS SQL Server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 
