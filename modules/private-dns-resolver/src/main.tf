@@ -11,21 +11,25 @@ resource "azurerm_private_dns_resolver" "main" {
 resource "azurerm_private_dns_resolver_inbound_endpoint" "main" {
   count = var.inbound_endpoint_subnet_id != null ? 1 : 0
 
-  name                    = "main"
+  name                    = "dnsrin-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   private_dns_resolver_id = azurerm_private_dns_resolver.main.id
   location                = var.location
 
   ip_configurations {
     subnet_id = var.inbound_endpoint_subnet_id
   }
+
+  tags = merge(var.tags, local.tags)
 }
 
 resource "azurerm_private_dns_resolver_outbound_endpoint" "main" {
   count = var.outbound_endpoint_subnet_id != null ? 1 : 0
 
-  name                    = "main"
+  name                    = "dnsrout-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   private_dns_resolver_id = azurerm_private_dns_resolver.main.id
   location                = var.location
 
   subnet_id = var.outbound_endpoint_subnet_id
+
+  tags = merge(var.tags, local.tags)
 }
