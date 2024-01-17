@@ -91,8 +91,8 @@ Modules
      - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.1/module.tar.gz//src``
    * - `private-dns-resolver <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-dns-resolver>`__
-     - `1.0.2 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-dns-resolver%2F1.0.2>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-dns-resolver/1.0.2/module.tar.gz//src``
+     - `2.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-dns-resolver%2F2.0.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-dns-resolver/2.0.1/module.tar.gz//src``
    * - `private-endpoint <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-endpoint>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-endpoint%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-endpoint/1.0.0/module.tar.gz//src``
