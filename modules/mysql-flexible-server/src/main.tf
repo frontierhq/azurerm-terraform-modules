@@ -27,7 +27,7 @@ resource "azurerm_mysql_flexible_server_firewall_rule" "allow_access_to_azure_se
   end_ip_address      = "0.0.0.0"
 }
 
-resource "azapi_update_resource" "example" {
+resource "azapi_update_resource" "main" {
   type        = "Microsoft.DBforMySQL/flexibleServers@2023-06-01-preview"
   resource_id = azurerm_mysql_flexible_server.main.id
 
@@ -36,7 +36,6 @@ resource "azapi_update_resource" "example" {
       network = {
         publicNetworkAccess = var.public_network_access ? "Enabled" : "Disabled"
       }
-
     }
   })
 
