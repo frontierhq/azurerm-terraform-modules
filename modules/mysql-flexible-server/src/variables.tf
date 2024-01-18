@@ -7,6 +7,11 @@ variable "administrator_password" {
   type = string
 }
 
+variable "allow_access_to_azure_services" {
+  type    = bool
+  default = false
+}
+
 variable "backup_retention_days" {
   type    = number
   default = 7
@@ -46,6 +51,11 @@ variable "metric_categories" {
   default = [
     "AllMetrics"
   ]
+}
+
+variable "public_network_access" {
+  type    = bool
+  default = false
 }
 
 variable "resource_group_name" {

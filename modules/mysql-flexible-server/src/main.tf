@@ -17,11 +17,37 @@ resource "azurerm_mysql_flexible_server" "main" {
   }
 }
 
+resource "azurerm_mysql_flexible_server_firewall_rule" "allow_access_to_azure_services" {
+  count = var.allow_access_to_azure_services ? 1 : 0
+
+  name                = "allow_access_to_azure_services"
+  resource_group_name = var.resource_group_name
+  server_name         = azurerm_mysql_flexible_server.main.name
+  start_ip_address    = "0.0.0.0"
+  end_ip_address      = "0.0.0.0"
+}
+
+resource "azapi_update_resource" "main" {
+  type        = "Microsoft.DBforMySQL/flexibleServers@2023-06-01-preview"
+  resource_id = azurerm_mysql_flexible_server.main.id
+
+  body = jsonencode({
+    properties = {
+      network = {
+        publicNetworkAccess = var.public_network_access ? "Enabled" : "Disabled"
+      }
+    }
+  })
+
+  depends_on = [
+    azurerm_mysql_flexible_server.main,
+  ]
+}
+
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_mysql_flexible_server.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_mysql_flexible_server.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories
