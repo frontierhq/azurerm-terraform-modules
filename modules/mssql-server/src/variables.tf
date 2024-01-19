@@ -12,6 +12,7 @@ variable "azuread_authentication_only" {
   type    = bool
   default = true
 }
+
 variable "azuread_administrator" {
   type = object({
     login_username = string

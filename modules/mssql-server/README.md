@@ -8,14 +8,15 @@ This module creates a [MS SQL Server](https://registry.terraform.io/providers/ha
 module "mssql_server" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mssql-server/[VERSION]/module.tar.gz//src"
 
+  environment         = "dev"
+  identifier          = "mortgages"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "mtg"
+
   administrator_login        = "mysqladmin"
   administrator_password     = "P@ssw0rd1234!"
-  environment                = "dev"
-  identifier                 = "mortgages"
-  location                   = "uksouth"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  resource_group_name        = module.resource_group.name
-  zone                       = "mtg"
 
   tags = {
     WorkloadType = "MortgagesLZ/data-platform"
