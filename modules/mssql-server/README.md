@@ -8,7 +8,7 @@ This module creates a [MS SQL Server](https://registry.terraform.io/providers/ha
 module "mssql_server" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mssql-server/[VERSION]/module.tar.gz//src"
 
-  administrator_username     = "mysqladmin"
+  administrator_login        = "mysqladmin"
   administrator_password     = "P@ssw0rd1234!"
   environment                = "dev"
   identifier                 = "mortgages"
