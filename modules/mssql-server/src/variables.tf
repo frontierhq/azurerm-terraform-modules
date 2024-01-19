@@ -3,21 +3,23 @@ variable "administrator_password" {
   default = null
 }
 
-variable "administrator_username" {
+variable "administrator_login" {
   type    = string
   default = "sqladmin"
 }
 
+variable "azuread_authentication_only" {
+  type    = bool
+  default = true
+}
 variable "azuread_administrator" {
   type = object({
-    azuread_authentication_only = bool
-    login_username              = string
-    object_id                   = string
+    login_username = string
+    object_id      = string
   })
   default = {
-    azuread_authentication_only = true
-    login_username              = null
-    object_id                   = null
+    login_username = null
+    object_id      = null
   }
 }
 

@@ -5,7 +5,7 @@ provider "azurerm" {
 module "mssql-server" {
   source = "../src"
 
-  administrator_username     = "sqladmin"
+  administrator_login        = "sqladmin"
   administrator_password     = "P@ssw0rd1234!"
   environment                = "baz"
   identifier                 = "qux"
