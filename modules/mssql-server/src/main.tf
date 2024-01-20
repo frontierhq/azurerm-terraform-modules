@@ -5,17 +5,17 @@ resource "azurerm_mssql_server" "main" {
 
   minimum_tls_version          = var.minimum_tls_version
   version                      = var.sql_server_version
-  administrator_login          = var.azuread_authentication_only ? null : var.administrator_login
-  administrator_login_password = var.azuread_authentication_only ? null : var.administrator_password
+  administrator_login          = var.administrator_login
+  administrator_login_password = var.administrator_password
 
   identity {
     type = "SystemAssigned"
   }
 
   dynamic "azuread_administrator" {
-    for_each = var.azuread_authentication_only ? [{}] : []
+    for_each = var.azuread_administrator != null ? [{}] : []
     content {
-      azuread_authentication_only = var.azuread_authentication_only
+      azuread_authentication_only = var.azuread_administrator.azuread_authentication_only
       login_username              = var.azuread_administrator.login_username
       object_id                   = var.azuread_administrator.object_id
     }

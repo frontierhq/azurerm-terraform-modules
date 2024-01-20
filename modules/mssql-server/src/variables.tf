@@ -5,23 +5,16 @@ variable "administrator_password" {
 
 variable "administrator_login" {
   type    = string
-  default = "sqladmin"
-}
-
-variable "azuread_authentication_only" {
-  type    = bool
-  default = true
+  default = null
 }
 
 variable "azuread_administrator" {
   type = object({
-    login_username = string
-    object_id      = string
+    azuread_authentication_only = bool
+    login_username              = string
+    object_id                   = string
   })
-  default = {
-    login_username = null
-    object_id      = null
-  }
+  default = null
 }
 
 variable "environment" {
