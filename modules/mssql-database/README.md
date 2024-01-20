@@ -5,13 +5,12 @@ This module creates a [MS SQL Database](https://registry.terraform.io/providers/
 ## Usage
 
 ```hcl
-module "mssql_server" {
+module "mssql_database" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mssql-database/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "mortgages"
   location            = "uksouth"
-  resource_group_name = module.resource_group.name
   zone                = "mtg"
 
   threat_detection_policy = {

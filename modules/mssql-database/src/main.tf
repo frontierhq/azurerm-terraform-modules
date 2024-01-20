@@ -1,5 +1,5 @@
 resource "azurerm_mssql_database" "main" {
-  name        = "sdb-ct-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  name        = "sdb-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   server_id   = var.sql_server_id
   max_size_gb = var.max_size_gb
   sku_name    = var.sql_database_sku
