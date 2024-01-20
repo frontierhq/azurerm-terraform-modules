@@ -11,9 +11,12 @@ module "mssql-server" {
   resource_group_name = "grault"
   zone                = "waldo"
 
-  administrator_login        = "sqladmin"
-  administrator_password     = "P@ssw0rd1234!"
   log_analytics_workspace_id = "quux"
+  azuread_administrator = {
+    azuread_authentication_only = true
+    login_username              = "corge"
+    object_id                   = "grault"
+  }
 
   tags = {
     Foo = "Bar"

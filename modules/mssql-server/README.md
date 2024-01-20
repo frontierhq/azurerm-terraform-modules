@@ -14,8 +14,11 @@ module "mssql_server" {
   resource_group_name = module.resource_group.name
   zone                = "mtg"
 
-  administrator_login        = "mysqladmin"
-  administrator_password     = "P@ssw0rd1234!"
+  azuread_administrator = {
+    azuread_authentication_only = true
+    login_username = "admin"
+    object_id      = "12345678"
+  }
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
 
   tags = {
