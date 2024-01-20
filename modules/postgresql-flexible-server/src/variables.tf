@@ -27,13 +27,34 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
+# https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-dbforpostgresql-flexibleservers-logs
+variable "log_categories" {
+  type    = list(string)
+  default = []
+}
+
+variable "log_category_groups" {
+  type = list(string)
+  default = [
+    "audit"
+  ]
+}
+
+variable "metric_categories" {
+  type = list(string)
+  default = [
+    "AllMetrics"
+  ]
+}
+
 variable "postgres_version" {
   type    = string
   default = "12"
 }
 
 variable "private_dns_zone_id" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "resource_group_name" {
@@ -51,7 +72,8 @@ variable "storage_mb" {
 }
 
 variable "subnet_id" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "tags" {
