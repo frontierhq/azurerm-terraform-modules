@@ -15,5 +15,6 @@ jobs:
           keep_latest: 0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
       - name: Delete unstable tags
         run: git tag -l "*-unstable" | xargs -n 1 git push --delete origin
