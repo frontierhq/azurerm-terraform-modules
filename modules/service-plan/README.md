@@ -1,6 +1,6 @@
 # App Service: Service Plan
 
-This module creates an [App Service Plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_plan).
+This module creates an [App Service: Service Plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_plan).
 
 ## Usage
 
