@@ -42,18 +42,18 @@ For example:
 
 .. code:: hcl
 
-        module "resource_group" {
-            source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.0/module.tar.gz//src"
+    module "resource_group" {
+      source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.0/module.tar.gz//src"
 
-            environment = "dev"
-            identifier  = "k8s"
-            location    = "uksouth"
-            zone        = "shd"
+      environment = "dev"
+      identifier  = "k8s"
+      location    = "uksouth"
+      zone        = "shd"
 
-            tags = {
-                WorkloadType = "CustomerBankingLZ/container-platform"
-            }
-        }
+      tags = {
+        WorkloadType = "CustomerBankingLZ/container-platform"
+      }
+    }
 
 See `Modules Overview <https://developer.hashicorp.com/terraform/language/modules>`_ for more information on Terraform Modules.
 

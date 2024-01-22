@@ -24,6 +24,14 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
+variable "metric_categories" {
+  type = list(string)
+  default = [
+    "Capacity",
+    "Transaction"
+  ]
+}
+
 variable "resource_group_name" {
   type = string
 }

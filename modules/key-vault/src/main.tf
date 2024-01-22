@@ -24,11 +24,27 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
   target_resource_id         = azurerm_key_vault.main.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
-  enabled_log {
-    category_group = "audit"
+  dynamic "enabled_log" {
+    for_each = var.log_categories
+
+    content {
+      category = enabled_log.value
+    }
   }
 
-  metric {
-    category = "AllMetrics"
+  dynamic "enabled_log" {
+    for_each = var.log_category_groups
+
+    content {
+      category_group = enabled_log.value
+    }
+  }
+
+  dynamic "metric" {
+    for_each = var.metric_categories
+
+    content {
+      category = metric.value
+    }
   }
 }

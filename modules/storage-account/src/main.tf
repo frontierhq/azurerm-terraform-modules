@@ -15,11 +15,11 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
   target_resource_id         = azurerm_storage_account.main.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
-  metric {
-    category = "Capacity"
-  }
+  dynamic "metric" {
+    for_each = var.metric_categories
 
-  metric {
-    category = "Transaction"
+    content {
+      category = metric.value
+    }
   }
 }

@@ -5,12 +5,13 @@ provider "azurerm" {
 module "data_factory" {
   source = "../src"
 
-  environment                = "baz"
-  identifier                 = "qux"
-  location                   = "uksouth"
+  environment         = "baz"
+  identifier          = "qux"
+  location            = "uksouth"
+  resource_group_name = "grault"
+  zone                = "waldo"
+
   log_analytics_workspace_id = "quux"
-  resource_group_name        = "grault"
-  zone                       = "waldo"
 
   tags = {
     Foo = "Bar"
