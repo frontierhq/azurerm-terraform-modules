@@ -1,6 +1,6 @@
 # Automation Account
 
-This module creates a [Automation Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/automation_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
+This module creates an [Automation Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/automation_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 
