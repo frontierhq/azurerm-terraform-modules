@@ -22,7 +22,7 @@ module "azurerm_cognitive_account" "main" {
 
 ## Known issues
 
-You may need to agree to a code of conduct befoe you can deploy this service. See this [Microsoft article](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/code-of-conduct) for more information
+You may need to agree to a code of conduct before you can deploy this service. See this [Microsoft article](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/code-of-conduct) for more information.
 
 ## Contributing
 
