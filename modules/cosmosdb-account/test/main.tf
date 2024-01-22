@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "app_service" {
+module "comosdb_account" {
   source = "../src"
 
   environment         = "bar"

@@ -43,12 +43,6 @@ resource "azurerm_linux_function_app" "main" {
     }
   }
 
-  lifecycle {
-    ignore_changes = [
-      virtual_network_subnet_id
-    ]
-  }
-
   identity {
     type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
     identity_ids = var.identity_ids
@@ -56,10 +50,9 @@ resource "azurerm_linux_function_app" "main" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_linux_function_app.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_linux_function_app.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories

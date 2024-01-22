@@ -1,4 +1,4 @@
-# Data Factory
+# Cosmosdb Account
 
 This module creates a [Cosmosdb Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account).
 

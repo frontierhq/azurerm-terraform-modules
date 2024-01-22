@@ -51,10 +51,9 @@ resource "azurerm_linux_web_app" "main" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_linux_web_app.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_linux_web_app.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories

@@ -1,6 +1,6 @@
-# Data Factory
+# Search Service
 
-This module creates an [Azure AI Search Service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
+This module creates an [Search Service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 
