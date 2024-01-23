@@ -30,28 +30,10 @@ resource "azurerm_cognitive_account" "main" {
   }
 }
 
-resource "azurerm_cognitive_deployment" "main" {
-  for_each = var.deployment
-
-  cognitive_account_id = azurerm_cognitive_account.main.id
-  name                 = each.value.name
-  rai_policy_name      = each.value.rai_policy_name
-
-  model {
-    format  = each.value.model_format
-    name    = each.value.model_name
-    version = each.value.model_version
-  }
-  scale {
-    type = each.value.scale_type
-  }
-}
-
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_cognitive_account.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_cognitive_account.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories

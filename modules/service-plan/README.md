@@ -6,15 +6,17 @@ This module creates an [App Service: Service Plan](https://registry.terraform.io
 
 ```hcl
 module "service_plan" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/app-service-plan/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/service-plan/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "mortgages"
   location            = "uksouth"
-  os_type             = "Linux"
   resource_group_name = module.resource_group.name
-  sku_name            = "P0v3"
   zone                = "mtg"
+
+  os_type  = "Linux"
+  sku_name = "P0v3"
+
 
   tags = {
     WorkloadType = "MortgagesLZ/web-services"

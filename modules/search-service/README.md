@@ -14,6 +14,8 @@ module "search_service" {
   resource_group_name = module.resource_group.name
   zone                = "mtg"
 
+  log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
+
   tags = {
     WorkloadType = "MortgagesLZ/ai-services"
   }

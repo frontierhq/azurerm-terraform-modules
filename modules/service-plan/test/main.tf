@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "app_service_plan" {
+module "service_plan" {
   source = "../src"
 
   environment         = "bar"

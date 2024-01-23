@@ -3,18 +3,6 @@ variable "custom_subdomain_name" {
   default = null
 }
 
-variable "deployment" {
-  type = map(object({
-    name            = string
-    model_format    = string
-    model_name      = string
-    model_version   = string
-    scale_type      = string
-    rai_policy_name = optional(string)
-  }))
-  default = {}
-}
-
 variable "dynamic_throttling_enabled" {
   type    = bool
   default = null
