@@ -56,7 +56,7 @@ variable "log_categories" {
   default = [
     "AppServiceConsoleLogs",
     "AppServiceHTTPLogs",
-    "AppServiceEnvironmentPlatformLogs",
+    "AppServicePlatformLogs",
     "AppServiceAuditLogs",
     "AppServicePlatformLogs"
   ]
