@@ -66,11 +66,16 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
-variable "log_category_groups" {
+variable "log_categories" {
   type = list(string)
   default = [
     "FunctionAppLogs"
   ]
+}
+
+variable "log_category_groups" {
+  type    = list(string)
+  default = []
 }
 
 variable "metric_categories" {

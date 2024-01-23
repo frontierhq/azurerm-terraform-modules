@@ -51,7 +51,7 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
-variable "log_category_groups" {
+variable "log_categories" {
   type = list(string)
   default = [
     "AppServiceConsoleLogs",
@@ -60,6 +60,11 @@ variable "log_category_groups" {
     "AppServiceAuditLogs",
     "AppServicePlatformLogs"
   ]
+}
+
+variable "log_category_groups" {
+  type    = list(string)
+  default = []
 }
 
 variable "logs" {

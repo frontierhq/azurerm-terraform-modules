@@ -25,10 +25,18 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
-    for_each = var.log_category_groups
+    for_each = var.log_categories
 
     content {
       category = enabled_log.value
+    }
+  }
+
+  dynamic "enabled_log" {
+    for_each = var.log_category_groups
+
+    content {
+      category_group = enabled_log.value
     }
   }
 
