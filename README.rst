@@ -66,6 +66,12 @@ Modules
    * - Module name
      - Latest version
      - Source URL
+   * - `automation-account <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/automation-account>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/automation-account%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/automation-account/1.0.0/module.tar.gz//src``
+   * - `automation-runbook <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/automation-runbook>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/automation-runbook%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/automation-runbook/1.0.0/module.tar.gz//src``
    * - `data-factory <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/data-factory>`__
      - `1.0.2 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/data-factory%2F1.0.2>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/1.0.2/module.tar.gz//src``
@@ -82,14 +88,14 @@ Modules
      - `2.0.3 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F2.0.3>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/2.0.3/module.tar.gz//src``
    * - `mysql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/mysql-flexible-server>`__
-     - `1.0.3 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/mysql-flexible-server%2F1.0.3>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/1.0.3/module.tar.gz//src``
+     - `1.1.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/mysql-flexible-server%2F1.1.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/1.1.0/module.tar.gz//src``
    * - `point-to-site-vpn-gateway <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/point-to-site-vpn-gateway>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/point-to-site-vpn-gateway%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/point-to-site-vpn-gateway/1.0.0/module.tar.gz//src``
    * - `postgresql-flexible-server <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/postgresql-flexible-server>`__
-     - `1.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.0.1>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.0.1/module.tar.gz//src``
+     - `1.1.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/postgresql-flexible-server%2F1.1.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/postgresql-flexible-server/1.1.0/module.tar.gz//src``
    * - `private-dns-resolver <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/private-dns-resolver>`__
      - `2.0.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/private-dns-resolver%2F2.0.1>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-dns-resolver/2.0.1/module.tar.gz//src``
