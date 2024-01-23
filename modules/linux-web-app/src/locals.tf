@@ -4,6 +4,7 @@ locals {
     docker_image        = null
     docker_image_tag    = null
     dotnet_version      = null
+    go_version          = null
     java_server         = null
     java_server_version = null
     java_version        = null

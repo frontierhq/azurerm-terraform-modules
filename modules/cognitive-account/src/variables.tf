@@ -8,11 +8,6 @@ variable "dynamic_throttling_enabled" {
   default = null
 }
 
-variable "default_action" {
-  type    = string
-  default = null
-}
-
 variable "environment" {
   type = string
 }
@@ -29,11 +24,6 @@ variable "identity_ids" {
 
 variable "identifier" {
   type = string
-}
-
-variable "ip_rules" {
-  type    = list(string)
-  default = []
 }
 
 variable "kind" {
@@ -73,6 +63,18 @@ variable "metric_categories" {
   ]
 }
 
+variable "network_acls" {
+  type = set(object({
+    default_action = string
+    ip_rules       = optional(set(string))
+    virtual_network_rules = optional(set(object({
+      subnet_id                            = string
+      ignore_missing_vnet_service_endpoint = optional(bool, false)
+    })))
+  }))
+  default = null
+}
+
 variable "outbound_network_access_restricted" {
   type    = bool
   default = false
@@ -97,14 +99,6 @@ variable "storage" {
   type = list(object({
     storage_account_id = string
     identity_client_id = optional(string)
-  }))
-  default = []
-}
-
-variable "virtual_network_rules" {
-  type = list(object({
-    ignore_missing_vnet_service_endpoint = bool
-    subnet_id                            = string
   }))
   default = []
 }
