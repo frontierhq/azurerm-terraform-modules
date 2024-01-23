@@ -5,7 +5,7 @@ This module creates a [Log Analytics Workspace](https://registry.terraform.io/pr
 ## Usage
 
 ```hcl
-module "firewall_policy" {
+module "log_analytics_workspace" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/log-analytics-workspace/[VERSION]/module.tar.gz//src"
 
   environment         = "mgt"
