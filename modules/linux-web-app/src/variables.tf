@@ -51,7 +51,7 @@ variable "log_analytics_workspace_id" {
   type = string
 }
 
-variable "log_categories" {
+variable "log_category_groups" {
   type = list(string)
   default = [
     "AppServiceConsoleLogs",
