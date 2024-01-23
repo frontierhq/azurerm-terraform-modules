@@ -1,11 +1,11 @@
-# Cognitive Services Account
+# Cognitive Account
 
-This module creates a [Cognitive Services Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
+This module creates a [Cognitive Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 
 ```hcl
-module "azurerm_cognitive_account" "main" {
+module "cognitive_account" "main" {
   source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/cognitive-services/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"

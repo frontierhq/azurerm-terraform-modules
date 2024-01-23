@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "function_app_element" {
+module "linux_function_app" {
   source = "../src"
 
   environment         = "foo"

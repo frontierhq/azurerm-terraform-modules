@@ -15,7 +15,7 @@ module "linux_web_app" {
   zone                       = "mtg"
 
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  service_plan_id            = module.app_service_plan.id
+  service_plan_id            = module.service_plan.id
   instrumentation_key        = azurerm_application_insights.main.instrumentation_key
 
   tags = {

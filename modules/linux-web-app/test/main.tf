@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "app_service" {
+module "linux_web_app" {
   source = "../src"
 
   environment         = "bar"
