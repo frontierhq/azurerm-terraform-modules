@@ -1,6 +1,6 @@
 # Cognitive Services Account
 
-This module creates an [AI Services Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting). A [Cognitive Deployment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_deployment) is also implemented.
+This module creates a [Cognitive Services Account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 

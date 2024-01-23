@@ -8,10 +8,11 @@ module "service_plan" {
   environment         = "bar"
   identifier          = "baz"
   location            = "uksouth"
-  os_type             = "boo"
   resource_group_name = "bar"
-  sku_name            = "far"
   zone                = "bat"
+
+  os_type  = "boo"
+  sku_name = "far"
 
   tags = {
     Foo = "Bar"

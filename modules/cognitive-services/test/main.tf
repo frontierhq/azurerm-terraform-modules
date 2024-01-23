@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-module "cognitive-search" {
+module "cognitive-services" {
   source = "../src"
 
   environment         = "bar"

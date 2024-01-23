@@ -1,6 +1,6 @@
 # Search Service
 
-This module creates an [Search Service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
+This module creates a [Search Service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) and associated [Diagnostic Setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting).
 
 ## Usage
 

@@ -13,11 +13,16 @@ resource "azurerm_cognitive_account" "main" {
 
   tags = merge(local.tags, var.tags)
 
-  dynamic "identity" {
-    for_each = var.identity != null ? [var.identity] : []
-    content {
-      type         = identity.value.type
-      identity_ids = identity.value.identity_ids
+  network_acls {
+    default_action = var.default_action
+    ip_rules       = var.ip_rules
+
+    dynamic "virtual_network_rules" {
+      for_each = var.virtual_network_rules
+      content {
+        subnet_id                            = virtual_network_rules.value.subnet_id
+        ignore_missing_vnet_service_endpoint = virtual_network_rules.value.ignore_missing_vnet_service_endpoint
+      }
     }
   }
 
@@ -27,6 +32,11 @@ resource "azurerm_cognitive_account" "main" {
       storage_account_id = storage.value.storage_account_id
       identity_client_id = storage.value.identity_client_id
     }
+  }
+
+  identity {
+    type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
+    identity_ids = var.identity_ids
   }
 }
 
