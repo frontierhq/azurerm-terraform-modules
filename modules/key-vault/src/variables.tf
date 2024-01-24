@@ -38,7 +38,7 @@ variable "log_categories" {
 variable "log_category_groups" {
   type = list(string)
   default = [
-    "audit"
+    "audit",
   ]
 }
 
