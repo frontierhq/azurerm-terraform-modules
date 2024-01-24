@@ -14,6 +14,10 @@ output "id" {
   value = azurerm_linux_web_app.main.id
 }
 
+output "identity" {
+  value = azurerm_linux_web_app.main.identity[*]
+}
+
 output "name" {
   value = azurerm_linux_web_app.main.name
 }

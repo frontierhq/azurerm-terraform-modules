@@ -26,9 +26,11 @@ resource "azurerm_linux_function_app" "main" {
       use_custom_runtime          = local.application_stack.use_custom_runtime
       use_dotnet_isolated_runtime = local.application_stack.use_dotnet_isolated_runtime
     }
-    always_on              = var.always_on
-    ftps_state             = "Disabled"
-    vnet_route_all_enabled = var.vnet_route_all_enabled
+    application_insights_connection_string = var.application_insights_connection_string
+    application_insights_key               = var.application_insights_key
+    always_on                              = var.always_on
+    ftps_state                             = "Disabled"
+    vnet_route_all_enabled                 = var.vnet_route_all_enabled
 
     dynamic "ip_restriction" {
       for_each = var.ip_restriction

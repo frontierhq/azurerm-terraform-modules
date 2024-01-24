@@ -1,3 +1,13 @@
+variable "application_insights_connection_string" {
+  type    = string
+  default = null
+}
+
+variable "application_insights_key" {
+  type    = string
+  default = null
+}
+
 variable "always_on" {
   type    = bool
   default = true
