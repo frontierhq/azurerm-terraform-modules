@@ -11,10 +11,6 @@ locals {
 
   application_stack = merge(local.application_stacks, var.application_stack)
 
-  app_settings = {
-    APPINSIGHTS_INSTRUMENTATIONKEY = var.instrumentation_key
-  }
-
   identifier = replace(lower(var.identifier), "/[^a-z1-9]/", "")
 
   short_locations = {
