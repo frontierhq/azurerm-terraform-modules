@@ -44,9 +44,12 @@ resource "azurerm_linux_web_app" "main" {
     }
   }
 
-  identity {
-    type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
-    identity_ids = var.identity_ids
+  dynamic "identity" {
+    for_each = var.identity != null ? [{}] : []
+    content {
+      type         = identity.value.type
+      identity_ids = identity.value.identity_ids
+    }
   }
 }
 

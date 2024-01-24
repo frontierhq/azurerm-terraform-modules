@@ -53,9 +53,15 @@ variable "identifier" {
   type = string
 }
 
-variable "identity_ids" {
-  type    = list(string)
-  default = null
+variable "identity" {
+  type = object({
+    type         = string
+    identity_ids = optional(list(string))
+  })
+  default = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
 }
 
 variable "instrumentation_key" {
