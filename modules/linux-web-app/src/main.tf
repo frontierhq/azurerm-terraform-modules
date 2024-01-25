@@ -45,7 +45,7 @@ resource "azurerm_linux_web_app" "main" {
   }
 
   dynamic "identity" {
-    for_each = var.identity != null ? [{}] : []
+    for_each = var.identity != null ? [var.identity] : []
     content {
       type         = identity.value.type
       identity_ids = identity.value.identity_ids
