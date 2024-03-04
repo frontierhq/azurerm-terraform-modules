@@ -10,10 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configure git
-        run: |
-          git config --global url."https://x-oauth-basic:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}".insteadOf https://github.com/${{ github.repository_owner }}
-
       - id: get_python_version
         name: Get Python version
         run: |

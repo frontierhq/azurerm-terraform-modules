@@ -27,8 +27,13 @@ variable "log_categories" {
     "PipelineRuns",
     "TriggerRuns",
     "SandboxPipelineRuns",
-    "SandboxActivityRuns"
+    "SandboxActivityRuns",
   ]
+}
+
+variable "log_category_groups" {
+  type    = list(string)
+  default = []
 }
 
 variable "managed_virtual_network_enabled" {
@@ -39,7 +44,7 @@ variable "managed_virtual_network_enabled" {
 variable "metric_categories" {
   type = list(string)
   default = [
-    "AllMetrics"
+    "AllMetrics",
   ]
 }
 

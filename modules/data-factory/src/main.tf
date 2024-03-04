@@ -35,21 +35,23 @@ resource "azurerm_data_factory" "main" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_data_factory.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_data_factory.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories
 
     content {
       category = enabled_log.value
+    }
+  }
 
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
+  dynamic "enabled_log" {
+    for_each = var.log_category_groups
+
+    content {
+      category_group = enabled_log.value
     }
   }
 
@@ -58,11 +60,6 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
 
     content {
       category = metric.value
-
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
     }
   }
 }
