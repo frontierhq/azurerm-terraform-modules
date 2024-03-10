@@ -21,6 +21,17 @@ variable "identifier" {
   type = string
 }
 
+variable "identity" {
+  type = object({
+    type         = string
+    identity_ids = optional(list(string))
+  })
+  default = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
+}
+
 variable "kubernetes_version" {
   type = string
 }
@@ -83,6 +94,21 @@ variable "outbound_type" {
   default = "loadBalancer"
 }
 
+variable "os_disk_size_gb" {
+  type    = number
+  default = 30
+}
+
+variable "os_disk_type" {
+  type    = string
+  default = "Ephemeral"
+}
+
+variable "os_sku" {
+  type    = string
+  default = "Ubuntu"
+}
+
 variable "resource_group_name" {
   type = string
 }
@@ -98,7 +124,7 @@ variable "tags" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_D2_v4"
+  default = "Standard_B4ms"
 }
 
 variable "zone" {
