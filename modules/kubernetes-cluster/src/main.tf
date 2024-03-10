@@ -22,6 +22,9 @@ resource "azurerm_kubernetes_cluster" "main" {
     max_count                   = var.node_max_count
     min_count                   = var.node_min_count
     node_count                  = var.node_count
+    os_disk_size_gb             = var.os_disk_size_gb
+    os_disk_type                = var.os_disk_type
+    os_sku                      = var.os_sku
     temporary_name_for_rotation = "tmp"
     vm_size                     = var.vm_size
     vnet_subnet_id              = var.subnet_id

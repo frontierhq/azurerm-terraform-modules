@@ -83,6 +83,21 @@ variable "outbound_type" {
   default = "loadBalancer"
 }
 
+variable "os_disk_size_gb" {
+  type    = number
+  default = 128
+}
+
+variable "os_disk_type" {
+  type    = string
+  default = "Managed"
+}
+
+variable "os_sku" {
+  type    = string
+  default = "Ubuntu"
+}
+
 variable "resource_group_name" {
   type = string
 }
