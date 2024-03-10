@@ -85,12 +85,12 @@ variable "outbound_type" {
 
 variable "os_disk_size_gb" {
   type    = number
-  default = 128
+  default = 30
 }
 
 variable "os_disk_type" {
   type    = string
-  default = "Managed"
+  default = "Ephemeral"
 }
 
 variable "os_sku" {
@@ -113,7 +113,7 @@ variable "tags" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_D2_v4"
+  default = "Standard_B4ms"
 }
 
 variable "zone" {
