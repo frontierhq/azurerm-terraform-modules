@@ -45,9 +45,12 @@ resource "azurerm_kubernetes_cluster" "main" {
     }
   }
 
-  identity {
-    type         = "SystemAssigned"
-    identity_ids = []
+  dynamic "identity" {
+    for_each = var.identity != null ? [var.identity] : []
+    content {
+      type         = identity.value.type
+      identity_ids = identity.value.identity_ids
+    }
   }
 
   key_vault_secrets_provider {

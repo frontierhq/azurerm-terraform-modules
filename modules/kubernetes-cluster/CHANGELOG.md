@@ -1,8 +1,9 @@
 # Changelog
 
 ## 3.0
-* Changed default node pool VM OS disk type to `Ephemeral`.
 * Added `os_disk_size_gb`, `os_disk_type` and `os_sku` variables to enable greater default node pool customisation.
+* Changed default node pool VM OS disk type to `Ephemeral`.
+* Changed default VM size to `Standard_B4ms`.
 
 ## 2.0
 * Added `log_categories` and `metric_categories` variables to enable configuration of Diagnostic Settings.
