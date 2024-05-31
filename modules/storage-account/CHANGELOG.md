@@ -2,7 +2,7 @@
 
 ## 1.2
 
-* Added support for `static_website`.
+* Added support for static website.
 
 ## 1.1
 
