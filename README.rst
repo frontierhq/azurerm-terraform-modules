@@ -72,6 +72,9 @@ Modules
    * - `automation-runbook <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/automation-runbook>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/automation-runbook%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/automation-runbook/1.0.0/module.tar.gz//src``
+   * - `cdn-profile <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/cdn-profile>`__
+     - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/cdn-profile%2F1.0.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/cdn-profile/1.0.0/module.tar.gz//src``
    * - `data-factory <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/data-factory>`__
      - `1.0.3 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/data-factory%2F1.0.3>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/1.0.3/module.tar.gz//src``
@@ -109,8 +112,8 @@ Modules
      - `1.0.6 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.6>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.6/module.tar.gz//src``
    * - `storage-account <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/storage-account>`__
-     - `1.1.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.1.1>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/1.1.1/module.tar.gz//src``
+     - `1.2.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.2.0>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/1.2.0/module.tar.gz//src``
    * - `user-assigned-identity <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/user-assigned-identity>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/user-assigned-identity%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/1.0.0/module.tar.gz//src``
