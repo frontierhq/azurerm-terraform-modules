@@ -7,7 +7,6 @@ module "cdn_profile" {
 
   environment         = "foo"
   identifier          = "bar"
-  location            = "uksouth"
   resource_group_name = "qux"
   zone                = "baz"
 
