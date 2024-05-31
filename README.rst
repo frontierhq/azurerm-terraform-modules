@@ -85,8 +85,8 @@ Modules
      - `1.0.12 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/key-vault%2F1.0.12>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/1.0.12/module.tar.gz//src``
    * - `kubernetes-cluster <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/kubernetes-cluster>`__
-     - `2.0.4 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F2.0.4>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/2.0.4/module.tar.gz//src``
+     - `3.0.2 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/kubernetes-cluster%2F3.0.2>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/3.0.2/module.tar.gz//src``
    * - `log-analytics-workspace <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/log-analytics-workspace>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/log-analytics-workspace%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/log-analytics-workspace/1.0.0/module.tar.gz//src``
@@ -109,8 +109,8 @@ Modules
      - `1.0.6 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/resource-group%2F1.0.6>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.6/module.tar.gz//src``
    * - `storage-account <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/storage-account>`__
-     - `1.0.2 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.0.2>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/1.0.2/module.tar.gz//src``
+     - `1.1.1 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/storage-account%2F1.1.1>`__
+     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/1.1.1/module.tar.gz//src``
    * - `user-assigned-identity <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/user-assigned-identity>`__
      - `1.0.0 <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/user-assigned-identity%2F1.0.0>`__
      - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/1.0.0/module.tar.gz//src``
