@@ -36,6 +36,14 @@ variable "resource_group_name" {
   type = string
 }
 
+variable "static_website" {
+  type = object({
+    index_document     = string
+    error_404_document = string
+  })
+  default = null
+}
+
 variable "tags" {
   type    = map(string)
   default = {}
