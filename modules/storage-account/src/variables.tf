@@ -8,6 +8,14 @@ variable "account_replication_type" {
   default = "ZRS"
 }
 
+variable "custom_domain" {
+  type = object({
+    name          = string
+    use_subdomain = bool
+  })
+  default = null
+}
+
 variable "environment" {
   type = string
 }
@@ -34,6 +42,14 @@ variable "metric_categories" {
 
 variable "resource_group_name" {
   type = string
+}
+
+variable "static_website" {
+  type = object({
+    error_404_document = string
+    index_document     = string
+  })
+  default = null
 }
 
 variable "tags" {

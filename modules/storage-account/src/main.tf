@@ -7,6 +7,22 @@ resource "azurerm_storage_account" "main" {
   account_replication_type = var.account_replication_type
   min_tls_version          = "TLS1_2"
 
+  dynamic "custom_domain" {
+    for_each = var.custom_domain != null ? [var.custom_domain] : []
+    content {
+      name          = custom_domain.value.name
+      use_subdomain = custom_domain.value.use_subdomain
+    }
+  }
+
+  dynamic "static_website" {
+    for_each = var.static_website != null ? [var.static_website] : []
+    content {
+      error_404_document = static_website.value.error_404_document
+      index_document     = static_website.value.index_document
+    }
+  }
+
   tags = merge(var.tags, local.tags)
 }
 
