@@ -1,7 +1,7 @@
 from python_terraform import Terraform
 
 
-def test_terraform(working_dir: str, validate: bool = True, **kwargs: dict,):
+def test_terraform(working_dir: str, validate: bool = True):
     print(f"testing terraform resources in '{working_dir}'")
 
     terraform = Terraform(working_dir=working_dir)
@@ -14,7 +14,7 @@ def test_terraform(working_dir: str, validate: bool = True, **kwargs: dict,):
         exit(return_code)
 
     if (validate):
-        return_code, _, _ = terraform.init(backend=False, capture_output=False, **kwargs)
+        return_code, _, _ = terraform.init(backend=False, capture_output=False)
         if (return_code != 0):
             exit(return_code)
 
