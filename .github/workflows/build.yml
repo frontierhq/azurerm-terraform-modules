@@ -4,9 +4,15 @@ name: build
 on:
   workflow_call:
 
+env:
+  TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform.d/plugin-cache
+
 jobs:
-  build:
+  preflight:
     runs-on: ubuntu-latest
+    outputs:
+      python_version: ${{ steps.get_python_version.outputs.python_version }}
+      terraform_version: ${{ steps.get_terraform_version.outputs.terraform_version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -19,9 +25,32 @@ jobs:
           echo "Python version: ${python_version}"
           echo "python_version=$python_version" >> "$GITHUB_OUTPUT"
 
+      - id: get_terraform_version
+        name: Get Terraform version
+        run: |
+          set -euo pipefail
+
+          terraform_version=$(cat ${GITHUB_WORKSPACE}/.tfswitchrc)
+          echo "Terraform version: ${terraform_version}"
+          echo "terraform_version=$terraform_version" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: preflight
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v4
         with:
-          python-version: ${{ steps.get_python_version.outputs.python_version }}
+          python-version: ${{ needs.preflight.outputs.python_version }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ needs.preflight.outputs.terraform_version }}
+          terraform_wrapper: false
+
+      - name: Create Terraform plugin cache dir
+        run: mkdir --parents $TF_PLUGIN_CACHE_DIR
 
       - name: Setup pipenv
         run: python -m pip install --upgrade pipenv wheel
