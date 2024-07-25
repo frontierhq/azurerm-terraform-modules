@@ -1,7 +1,7 @@
 {#- README.rst -#}
 
-.. image:: https://github.com/gofrontier-com/azurerm-terraform-modules/actions/workflows/ci.yml/badge.svg
-    :target: https://github.com/gofrontier-com/azurerm-terraform-modules/actions/workflows/ci.yml
+.. image:: https://github.com/frontierhq/azurerm-terraform-modules/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/frontierhq/azurerm-terraform-modules/actions/workflows/ci.yml
 
 =========================
 azurerm-terraform-modules
@@ -28,7 +28,7 @@ Usage
 -----
 
 This repository maintains independent `semver <https://semver.org/>`_ versioning for each module,
-and produces module-specific `releases <https://github.com/gofrontier-com/azurerm-terraform-modules/releases>`_.
+and produces module-specific `releases <https://github.com/frontierhq/azurerm-terraform-modules/releases>`_.
 This approach enables modules to be consumed independently of one another, and without the need for
 Terraform to clone the entire repository.
 
@@ -36,14 +36,14 @@ To use a module, add a `module block <https://www.terraform.io/docs/language/mod
 and specify the source as a `module archive <https://developer.hashicorp.com/terraform/language/modules/sources#fetching-archives-over-http>`_
 URL. The URL should be in the format:
 
-``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/[module-name]/[version]/module.tar.gz//src``
+``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/[module-name]/[version]/module.tar.gz//src``
 
 For example:
 
 .. code:: hcl
 
     module "resource_group" {
-      source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/resource-group/1.0.0/module.tar.gz//src"
+      source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/resource-group/1.0.0/module.tar.gz//src"
 
       environment = "dev"
       identifier  = "k8s"
@@ -69,13 +69,13 @@ Modules
      - Latest version
      - Source URL
 {%- for module in modules %}
-   * - `{{ module.name }} <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/modules/{{ module.name }}>`__
-     - `{{ module.version }} <https://github.com/gofrontier-com/azurerm-terraform-modules/releases/tag/{{ module.name }}%2F{{ module.version }}>`__
-     - ``https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/{{ module.name }}/{{ module.version }}/module.tar.gz//src``
+   * - `{{ module.name }} <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/{{ module.name }}>`__
+     - `{{ module.version }} <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/{{ module.name }}%2F{{ module.version }}>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/{{ module.name }}/{{ module.version }}/module.tar.gz//src``
 {%- endfor %}
 
 ------------
 Contributing
 ------------
 
-We welcome contributions to this repository. Please see `CONTRIBUTING.md <https://github.com/gofrontier-com/azurerm-terraform-modules/tree/main/CONTRIBUTING.md>`_ for more information.
+We welcome contributions to this repository. Please see `CONTRIBUTING.md <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/CONTRIBUTING.md>`_ for more information.
