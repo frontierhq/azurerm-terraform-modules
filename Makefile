@@ -8,6 +8,9 @@ install:
 install_ci:
 	pipenv sync
 
+lock_providers:
+	pipenv run python scripts/lock_providers.py
+
 test: test.lint test.script
 
 test.lint:
