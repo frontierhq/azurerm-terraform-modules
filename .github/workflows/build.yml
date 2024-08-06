@@ -5,6 +5,7 @@ on:
   workflow_call:
 
 env:
+  TF_PROJECT_DIR: terraform
   TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform.d/plugin-cache
 
 jobs:
@@ -40,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ needs.preflight.outputs.python_version }}
 
@@ -56,7 +57,7 @@ jobs:
         run: python -m pip install --upgrade pipenv wheel
 
       - id: cache-pipenv
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.local/share/virtualenvs
           key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}-dev
@@ -66,6 +67,10 @@ jobs:
         run: make install_ci
         env:
           PIPENV_DEV: true
-
+      - id: cache-terraform-providers
+        uses: actions/cache@v4
+        with:
+          path: $TF_PLUGIN_CACHE_DIR
+          key: ${CI_PROJECT_DIR}/plugin-cache
       - name: Test
         run: make test
