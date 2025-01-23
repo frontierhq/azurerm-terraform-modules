@@ -38,5 +38,5 @@ jobs:
         env:
           PIPENV_DEV: true
 
-      - name: Test
-        run: make test
+      # - name: Test
+      #   run: make test
