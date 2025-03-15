@@ -28,7 +28,7 @@ jobs:
       - name: Download vertag
         uses: robinraju/release-downloader@v1.8
         with:
-          repository: gofrontier-com/vertag
+          repository: ${{ github.repository_owner }}/vertag
           latest: true
           fileName: vertag_Linux_x86_64.tar.gz
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,4 +42,4 @@ jobs:
             --author-name "Build bot" \
             --author-email "build.bot@gofrontier.com" \
             --modules-dir "modules" \
-            --remote-url "https://${BUILD_BOT_PAT}:x-oauth-basic@github.com/gofrontier-com/azurerm-terraform-modules"
+            --remote-url "https://${BUILD_BOT_PAT}:x-oauth-basic@github.com/${{ github.repository_owner }}/azurerm-terraform-modules"

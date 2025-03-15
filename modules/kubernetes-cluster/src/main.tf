@@ -10,7 +10,6 @@ resource "azurerm_kubernetes_cluster" "main" {
   azure_policy_enabled = true
 
   azure_active_directory_role_based_access_control {
-    managed                = true
     admin_group_object_ids = var.admin_group_object_ids
     azure_rbac_enabled     = true
   }
@@ -18,7 +17,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   default_node_pool {
     name = "system"
 
-    enable_auto_scaling         = var.enable_auto_scaling
+    auto_scaling_enabled        = var.auto_scaling_enabled
     max_count                   = var.node_max_count
     min_count                   = var.node_min_count
     node_count                  = var.node_count

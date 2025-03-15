@@ -3,14 +3,14 @@ variable "admin_group_object_ids" {
   default = []
 }
 
+variable "auto_scaling_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "authorized_ip_ranges" {
   type    = list(string)
   default = []
-}
-
-variable "enable_auto_scaling" {
-  type    = bool
-  default = true
 }
 
 variable "environment" {
