@@ -40,6 +40,6 @@ jobs:
         run: |
           ./vertag \
             --author-name "Build bot" \
-            --author-email "build.bot@frontierhq.com" \
+            --author-email "build.bot@gofrontier.com" \
             --modules-dir "modules" \
             --remote-url "https://${BUILD_BOT_PAT}:x-oauth-basic@github.com/${{ github.repository_owner }}/azurerm-terraform-modules"
