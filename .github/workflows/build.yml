@@ -37,3 +37,6 @@ jobs:
         run: make install_ci
         env:
           PIPENV_DEV: true
+
+      - name: Test
+        run: make test
