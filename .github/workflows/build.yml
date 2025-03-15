@@ -53,6 +53,7 @@ jobs:
         run: mkdir --parents $TF_PLUGIN_CACHE_DIR
 
       - id: cache-terraform-plugins
+        name: Cache terraform plugins
         uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/.terraform.d/plugin-cache
@@ -65,6 +66,7 @@ jobs:
         run: python -m pip install --upgrade pipenv wheel
 
       - id: cache-pipenv
+        name: Cache virtual envs
         uses: actions/cache@v3
         with:
           path: ~/.local/share/virtualenvs
