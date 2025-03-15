@@ -53,6 +53,14 @@ resource "azurerm_kubernetes_cluster" "main" {
     }
   }
 
+  dynamic "windows_profile" {
+    for_each = var.windows_profile != null ? [var.windows_profile] : []
+    content {
+      admin_username = windows_profile.value.admin_username
+      # license        = "Windows_Server"
+    }
+  }
+
   key_vault_secrets_provider {
     secret_rotation_enabled = true
   }
