@@ -129,6 +129,7 @@ variable "vm_size" {
 
 variable "windows_profile" {
   type = object({
+    admin_password = string
     admin_username = string
   })
   default = null
