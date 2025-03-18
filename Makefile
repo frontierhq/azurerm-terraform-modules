@@ -1,3 +1,9 @@
+clean:
+	find . -type d -name ".terraform" -exec rm -rf "{}" \+
+
+delete_lockfiles:
+	find . -name ".terraform.lock.hcl" -exec rm -rf "{}" \+
+
 generate_readme:
 	pipenv run python scripts/generate_readme.py $(branch)
 

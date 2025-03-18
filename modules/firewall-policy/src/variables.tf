@@ -3,9 +3,15 @@ variable "base_policy_id" {
   default = null
 }
 
-variable "dns_servers" {
-  type    = list(string)
-  default = []
+variable "dns" {
+  type = object({
+    proxy_enabled = bool
+    servers       = optional(list(string))
+  })
+  default = {
+    proxy_enabled = false
+    servers       = []
+  }
 }
 
 variable "environment" {

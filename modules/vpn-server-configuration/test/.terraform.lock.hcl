@@ -2,9 +2,11 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/azuread" {
-  version = "3.1.0"
+  version     = "3.1.0"
+  constraints = "~> 3.1"
   hashes = [
     "h1:QY/V8YuAw2phme+ryKEbZ/9B+Xi7SfXAOVr4uBoRqpk=",
+    "h1:UmSL7MD8ULg/WlRgwisD5lHsjcg9l8AO7AeO0XN96dU=",
     "zh:01b796cf12e93cc811cb15c8465605e75de170802060f9e2fe114835968960dd",
     "zh:12005fbffb84467ff1d4ce9317370834d1279743bc201d3db95f36315cdf8157",
     "zh:1c3e89cf19118fc07d7b04257251fc9897e722c16e0a0df7b07fcd261f8c12e7",
@@ -24,6 +26,7 @@ provider "registry.terraform.io/hashicorp/azurerm" {
   version     = "4.23.0"
   constraints = "~> 4.23"
   hashes = [
+    "h1:XW3jC2RJ0Vqgn+Ntm4FKPJhkUI5HhrwrfiAU5aikAoM=",
     "h1:fHnHlU3IjCzpmsZRIT1Wrpjau/V27e1Z1xv3IdfOLVU=",
     "zh:08d950618a2bf14445171a0eae3721b69be731d6732fad72e902e56e49d4d3b0",
     "zh:1a9c84376a30cc890830d433ec21057417c012135b40af672dc915010160595a",

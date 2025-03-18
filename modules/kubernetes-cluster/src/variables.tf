@@ -127,6 +127,14 @@ variable "vm_size" {
   default = "Standard_B4ms"
 }
 
+variable "windows_profile" {
+  type = object({
+    admin_password = string
+    admin_username = string
+  })
+  default = null
+}
+
 variable "zone" {
   type = string
 }

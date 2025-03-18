@@ -7,11 +7,10 @@ resource "azurerm_firewall_policy" "main" {
   sku            = var.sku
 
   dynamic "dns" {
-    for_each = length(var.dns_servers) > 0 ? [{}] : []
-
+    for_each = var.dns != null ? [var.dns] : []
     content {
-      proxy_enabled = true
-      servers       = var.dns_servers
+      proxy_enabled = dns.value.proxy_enabled
+      servers       = dns.value.servers
     }
   }
 

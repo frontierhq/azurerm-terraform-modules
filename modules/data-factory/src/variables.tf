@@ -6,9 +6,15 @@ variable "identifier" {
   type = string
 }
 
-variable "identity_ids" {
-  type    = list(string)
-  default = []
+variable "identity" {
+  type = object({
+    type         = string
+    identity_ids = optional(list(string))
+  })
+  default = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
 }
 
 variable "location" {
@@ -63,8 +69,15 @@ variable "tags" {
 }
 
 variable "vsts_configuration" {
-  type    = map(string)
-  default = {}
+  type = object({
+    account_name    = string
+    branch_name     = string
+    project_name    = string
+    repository_name = string
+    root_folder     = string
+    tenant_id       = string
+  })
+  default = null
 }
 
 variable "zone" {
