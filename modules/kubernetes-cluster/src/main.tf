@@ -3,9 +3,10 @@ resource "azurerm_kubernetes_cluster" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  dns_prefix          = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  kubernetes_version  = var.kubernetes_version
-  node_resource_group = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
+  cost_analysis_enabled = var.cost_analysis_enabled
+  dns_prefix            = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  kubernetes_version    = var.kubernetes_version
+  node_resource_group   = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
 
   azure_policy_enabled = true
 

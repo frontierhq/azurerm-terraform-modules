@@ -13,6 +13,11 @@ variable "authorized_ip_ranges" {
   default = []
 }
 
+variable "cost_analysis_enabled" {
+  type    = bool
+  default = false
+}
+
 variable "environment" {
   type = string
 }
