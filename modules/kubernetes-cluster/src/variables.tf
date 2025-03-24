@@ -20,7 +20,7 @@ variable "azure_policy_enabled" {
 
 variable "cost_analysis_enabled" {
   type    = bool
-  default = true
+  default = false
 }
 
 variable "environment" {
