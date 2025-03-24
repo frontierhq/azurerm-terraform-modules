@@ -13,9 +13,14 @@ variable "authorized_ip_ranges" {
   default = []
 }
 
+variable "azure_policy_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "cost_analysis_enabled" {
   type    = bool
-  default = false
+  default = true
 }
 
 variable "environment" {
@@ -131,6 +136,11 @@ variable "pod_subnet_id" {
 
 variable "resource_group_name" {
   type = string
+}
+
+variable "sku_tier" {
+  type    = string
+  default = "Standard"
 }
 
 variable "tags" {

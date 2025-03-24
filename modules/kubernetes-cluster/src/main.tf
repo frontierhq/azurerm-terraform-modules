@@ -3,12 +3,12 @@ resource "azurerm_kubernetes_cluster" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
+  azure_policy_enabled  = true
   cost_analysis_enabled = var.cost_analysis_enabled
   dns_prefix            = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   kubernetes_version    = var.kubernetes_version
   node_resource_group   = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
-
-  azure_policy_enabled = true
+  sku_tier              = var.sku_tier
 
   azure_active_directory_role_based_access_control {
     admin_group_object_ids = var.admin_group_object_ids
