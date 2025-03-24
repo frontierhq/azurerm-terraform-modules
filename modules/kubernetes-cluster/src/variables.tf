@@ -36,6 +36,11 @@ variable "kubernetes_version" {
   type = string
 }
 
+variable "load_balancer_sku" {
+  type    = string
+  default = "standard"
+}
+
 variable "location" {
   type = string
 }
@@ -66,7 +71,12 @@ variable "metric_categories" {
 
 variable "network_plugin" {
   type    = string
-  default = "kubenet"
+  default = "azure"
+}
+
+variable "network_plugin_mode" {
+  type    = string
+  default = "overlay"
 }
 
 variable "network_policy" {
@@ -109,11 +119,12 @@ variable "os_sku" {
   default = "Ubuntu"
 }
 
-variable "resource_group_name" {
-  type = string
+variable "pod_subnet_id" {
+  type    = string
+  default = null
 }
 
-variable "subnet_id" {
+variable "resource_group_name" {
   type = string
 }
 
@@ -125,6 +136,10 @@ variable "tags" {
 variable "vm_size" {
   type    = string
   default = "Standard_B4ms"
+}
+
+variable "vnet_subnet_id" {
+  type = string
 }
 
 variable "windows_profile" {

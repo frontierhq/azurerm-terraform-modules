@@ -24,9 +24,10 @@ resource "azurerm_kubernetes_cluster" "main" {
     os_disk_size_gb             = var.os_disk_size_gb
     os_disk_type                = var.os_disk_type
     os_sku                      = var.os_sku
+    pod_subnet_id               = var.pod_subnet_id
     temporary_name_for_rotation = "tmp"
     vm_size                     = var.vm_size
-    vnet_subnet_id              = var.subnet_id
+    vnet_subnet_id              = var.vnet_subnet_id
     zones                       = var.zones
 
     upgrade_settings {
@@ -65,10 +66,11 @@ resource "azurerm_kubernetes_cluster" "main" {
   }
 
   network_profile {
-    network_plugin    = var.network_plugin
-    load_balancer_sku = "standard"
-    outbound_type     = var.outbound_type
-    network_policy    = var.network_policy
+    network_plugin      = var.network_plugin
+    network_plugin_mode = var.network_plugin_mode
+    load_balancer_sku   = var.load_balancer_sku
+    outbound_type       = var.outbound_type
+    network_policy      = var.network_policy
   }
 
   microsoft_defender {
