@@ -3,14 +3,14 @@ resource "azurerm_kubernetes_cluster" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  dns_prefix          = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  kubernetes_version  = var.kubernetes_version
-  node_resource_group = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
-
-  azure_policy_enabled = true
+  azure_policy_enabled  = true
+  cost_analysis_enabled = var.cost_analysis_enabled
+  dns_prefix            = "${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  kubernetes_version    = var.kubernetes_version
+  node_resource_group   = "rg-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}k8snodes"
+  sku_tier              = var.sku_tier
 
   azure_active_directory_role_based_access_control {
-    managed                = true
     admin_group_object_ids = var.admin_group_object_ids
     azure_rbac_enabled     = true
   }
@@ -18,16 +18,17 @@ resource "azurerm_kubernetes_cluster" "main" {
   default_node_pool {
     name = "system"
 
-    enable_auto_scaling         = var.enable_auto_scaling
+    auto_scaling_enabled        = var.auto_scaling_enabled
     max_count                   = var.node_max_count
     min_count                   = var.node_min_count
     node_count                  = var.node_count
     os_disk_size_gb             = var.os_disk_size_gb
     os_disk_type                = var.os_disk_type
     os_sku                      = var.os_sku
+    pod_subnet_id               = var.pod_subnet_id
     temporary_name_for_rotation = "tmp"
     vm_size                     = var.vm_size
-    vnet_subnet_id              = var.subnet_id
+    vnet_subnet_id              = var.vnet_subnet_id
     zones                       = var.zones
 
     upgrade_settings {
@@ -53,15 +54,24 @@ resource "azurerm_kubernetes_cluster" "main" {
     }
   }
 
+  dynamic "windows_profile" {
+    for_each = var.windows_profile != null ? [var.windows_profile] : []
+    content {
+      admin_password = windows_profile.value.admin_password
+      admin_username = windows_profile.value.admin_username
+    }
+  }
+
   key_vault_secrets_provider {
     secret_rotation_enabled = true
   }
 
   network_profile {
-    network_plugin    = var.network_plugin
-    load_balancer_sku = "standard"
-    outbound_type     = var.outbound_type
-    network_policy    = var.network_policy
+    network_plugin      = var.network_plugin
+    network_plugin_mode = var.network_plugin_mode
+    load_balancer_sku   = var.load_balancer_sku
+    outbound_type       = var.outbound_type
+    network_policy      = var.network_policy
   }
 
   microsoft_defender {

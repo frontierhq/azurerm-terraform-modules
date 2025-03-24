@@ -3,14 +3,24 @@ variable "admin_group_object_ids" {
   default = []
 }
 
+variable "auto_scaling_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "authorized_ip_ranges" {
   type    = list(string)
   default = []
 }
 
-variable "enable_auto_scaling" {
+variable "azure_policy_enabled" {
   type    = bool
   default = true
+}
+
+variable "cost_analysis_enabled" {
+  type    = bool
+  default = false
 }
 
 variable "environment" {
@@ -34,6 +44,11 @@ variable "identity" {
 
 variable "kubernetes_version" {
   type = string
+}
+
+variable "load_balancer_sku" {
+  type    = string
+  default = "standard"
 }
 
 variable "location" {
@@ -66,7 +81,12 @@ variable "metric_categories" {
 
 variable "network_plugin" {
   type    = string
-  default = "kubenet"
+  default = "azure"
+}
+
+variable "network_plugin_mode" {
+  type    = string
+  default = "overlay"
 }
 
 variable "network_policy" {
@@ -109,12 +129,18 @@ variable "os_sku" {
   default = "Ubuntu"
 }
 
+variable "pod_subnet_id" {
+  type    = string
+  default = null
+}
+
 variable "resource_group_name" {
   type = string
 }
 
-variable "subnet_id" {
-  type = string
+variable "sku_tier" {
+  type    = string
+  default = "Standard"
 }
 
 variable "tags" {
@@ -125,6 +151,18 @@ variable "tags" {
 variable "vm_size" {
   type    = string
   default = "Standard_B4ms"
+}
+
+variable "vnet_subnet_id" {
+  type = string
+}
+
+variable "windows_profile" {
+  type = object({
+    admin_password = string
+    admin_username = string
+  })
+  default = null
 }
 
 variable "zone" {
