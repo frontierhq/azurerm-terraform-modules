@@ -6,7 +6,7 @@ This module creates a [Private Endpoint](https://registry.terraform.io/providers
 
 ```hcl
 module "private_endpoint" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-endpoint/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/private-endpoint/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "mortgages"
@@ -30,4 +30,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

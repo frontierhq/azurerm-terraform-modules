@@ -6,7 +6,7 @@ This module creates a [MySQL Flexible Server](https://registry.terraform.io/prov
 
 ```hcl
 module "mysql_flexible_server" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/mysql-flexible-server/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/mysql-flexible-server/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "mortgages"
@@ -30,4 +30,4 @@ module "mysql_flexible_server" {
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.
