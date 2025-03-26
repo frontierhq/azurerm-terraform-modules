@@ -3,6 +3,16 @@ variable "bypass" {
   default = "None"
 }
 
+variable "contact_email" {
+  type    = string
+  default = null
+}
+
+variable "contact_name" {
+  type    = string
+  default = null
+}
+
 variable "default_action" {
   type    = string
   default = "Deny"

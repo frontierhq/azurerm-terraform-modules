@@ -3,6 +3,11 @@ resource "azurerm_key_vault" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
+  contact {
+    email = var.contact_email
+    name  = var.contact_name
+  }
+
   enable_rbac_authorization  = true
   sku_name                   = var.sku_name
   tenant_id                  = var.tenant_id
