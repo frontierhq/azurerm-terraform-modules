@@ -13,6 +13,19 @@ resource "azurerm_virtual_network_gateway" "main" {
     subnet_id            = var.subnet_id
   }
 
+  dynamic "vpn_client_configuration" {
+    for_each = var.type == "Vpn" ? [{}] : []
+
+    content {
+      aad_audience         = data.azuread_service_principal.azure_vpn.client_id
+      aad_issuer           = "https://sts.windows.net/${data.azurerm_client_config.main.tenant_id}/"
+      aad_tenant           = "https://login.microsoftonline.com/${data.azurerm_client_config.main.tenant_id}/"
+      address_space        = var.vpn_client_configuration_address_space
+      vpn_auth_types       = ["AAD"]
+      vpn_client_protocols = ["OpenVPN"]
+    }
+  }
+
   tags = merge(var.tags, local.tags)
 }
 

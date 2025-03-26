@@ -44,7 +44,7 @@ variable "resource_group_name" {
 
 variable "sku" {
   type    = string
-  default = "Standard"
+  default = "VpnGw1"
 }
 
 variable "subnet_id" {
@@ -59,6 +59,11 @@ variable "tags" {
 variable "type" {
   type    = string
   default = "Vpn"
+}
+
+variable "vpn_client_configuration_address_space" {
+  type    = list(string)
+  default = []
 }
 
 variable "zone" {

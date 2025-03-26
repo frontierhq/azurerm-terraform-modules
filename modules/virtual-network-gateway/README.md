@@ -14,11 +14,12 @@ module "virtual_network_gateway" {
   resource_group_name = module.resource_group.name
   zone                = "mtg"
 
-  address_space              = "10.0.0.0/24"
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
+  public_ip_address_id       = module.public_ip.id
+  subnet_id                  = azurerm_subnet.vngw.id
 
   tags = {
-    WorkloadType = "Shared/virtual-network"
+    WorkloadType = "Shared/virtual-network-gateway"
   }
 }
 ```
