@@ -6,7 +6,7 @@ This module creates a [Virtual WAN](https://registry.terraform.io/providers/hash
 
 ```hcl
 module "virtual_wan" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/virtual-wan/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-wan/[VERSION]/module.tar.gz//src"
 
   environment         = "con"
   identifier          = "main"
@@ -26,4 +26,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

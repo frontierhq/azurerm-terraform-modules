@@ -6,7 +6,7 @@ This module creates a [Private DNS Resolver](https://registry.terraform.io/provi
 
 ```hcl
 module "private_dns_resolver" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/private-dns-resolver/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/private-dns-resolver/[VERSION]/module.tar.gz//src"
 
   environment                = "con"
   identifier                 = "main"
@@ -28,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

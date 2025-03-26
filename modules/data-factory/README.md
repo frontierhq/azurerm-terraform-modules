@@ -6,7 +6,7 @@ This module creates a [Data Factory](https://registry.terraform.io/providers/has
 
 ```hcl
 module "data_factory" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/data-factory/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "mortgages"
@@ -28,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.
