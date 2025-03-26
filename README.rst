@@ -108,6 +108,9 @@ Modules
    * - `private-endpoint <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/private-endpoint>`__
      - `2.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/private-endpoint%2F2.0.0>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/private-endpoint/2.0.0/module.tar.gz//src``
+   * - `public-ip <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/public-ip>`__
+     - `1.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/public-ip%2F1.0.0>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/public-ip/1.0.0/module.tar.gz//src``
    * - `resource-group <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - `2.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/resource-group%2F2.0.0>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/resource-group/2.0.0/module.tar.gz//src``
@@ -123,6 +126,9 @@ Modules
    * - `virtual-network <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/virtual-network>`__
      - `3.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-network%2F3.0.0>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-network/3.0.0/module.tar.gz//src``
+   * - `virtual-network-gateway <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/virtual-network-gateway>`__
+     - `1.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-network-gateway%2F1.0.0>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-network-gateway/1.0.0/module.tar.gz//src``
    * - `virtual-wan <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/virtual-wan>`__
      - `2.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-wan%2F2.0.0>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-wan/2.0.0/module.tar.gz//src``
