@@ -1,6 +1,6 @@
 variable "allocation_method" {
   type    = string
-  default = "Dynamic"
+  default = "Static"
 }
 
 variable "domain_name_label" {
