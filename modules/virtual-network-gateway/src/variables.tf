@@ -44,7 +44,7 @@ variable "resource_group_name" {
 
 variable "sku" {
   type    = string
-  default = "Basic"
+  default = "Standard"
 }
 
 variable "subnet_id" {
