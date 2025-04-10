@@ -109,6 +109,11 @@ variable "node_min_count" {
   default = 1
 }
 
+variable "oidc_issuer_enabled" {
+  type    = bool
+  default = false
+}
+
 variable "outbound_type" {
   type    = string
   default = "loadBalancer"
@@ -163,6 +168,11 @@ variable "windows_profile" {
     admin_username = string
   })
   default = null
+}
+
+variable "workload_identity_enabled" {
+  type    = bool
+  default = false
 }
 
 variable "zone" {
