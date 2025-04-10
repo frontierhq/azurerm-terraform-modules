@@ -6,7 +6,7 @@ This module creates a [User Assigned Identity](https://registry.terraform.io/pro
 
 ```hcl
 module "user_assigned_identity" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/user-assigned-identity/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/user-assigned-identity/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "akscluster"
@@ -26,4 +26,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

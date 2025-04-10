@@ -6,7 +6,7 @@ This module creates an [Automation Account](https://registry.terraform.io/provid
 
 ```hcl
 module "automation_account" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/automation-account/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/automation-account/[VERSION]/module.tar.gz//src"
 
   environment                = "con"
   identifier                 = "main"
@@ -28,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

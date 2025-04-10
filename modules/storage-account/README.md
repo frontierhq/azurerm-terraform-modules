@@ -6,7 +6,7 @@ This module creates a [Storage Account](https://registry.terraform.io/providers/
 
 ```hcl
 module "storage_account" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/storage-account/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "blobstore"
@@ -28,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

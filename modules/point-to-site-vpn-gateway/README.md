@@ -6,7 +6,7 @@ This module creates a [Point-to-Site VPN Gateway](https://registry.terraform.io/
 
 ```hcl
 module "point_to_site_vpn_gateway" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/point-to-site-vpn-gateway/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/point-to-site-vpn-gateway/[VERSION]/module.tar.gz//src"
 
   environment         = "con"
   identifier          = "staff"
@@ -30,4 +30,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.
