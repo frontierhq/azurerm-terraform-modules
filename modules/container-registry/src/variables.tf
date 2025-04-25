@@ -37,8 +37,10 @@ variable "log_categories" {
 }
 
 variable "log_category_groups" {
-  type    = list(string)
-  default = []
+  type = list(string)
+  default = [
+    "audit"
+  ]
 }
 
 # https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-containerregistry-registries-metrics
