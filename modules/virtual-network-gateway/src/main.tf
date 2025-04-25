@@ -1,7 +1,7 @@
 resource "azurerm_virtual_network_gateway" "main" {
   name                = "vngw-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  location            = var.location
   resource_group_name = var.resource_group_name
+  location            = var.location
 
   sku  = var.sku
   type = var.type
@@ -17,7 +17,7 @@ resource "azurerm_virtual_network_gateway" "main" {
     for_each = var.type == "Vpn" ? [{}] : []
 
     content {
-      aad_audience         = data.azuread_service_principal.azure_vpn.client_id
+      aad_audience         = "c632b3df-fb67-4d84-bdcf-b95ad541b5c8" # Microsoft-registered Azure VPN Client. See https://learn.microsoft.com/en-us/azure/vpn-gateway/point-to-site-entra-gateway
       aad_issuer           = "https://sts.windows.net/${data.azurerm_client_config.main.tenant_id}/"
       aad_tenant           = "https://login.microsoftonline.com/${data.azurerm_client_config.main.tenant_id}/"
       address_space        = var.vpn_client_configuration_address_space
