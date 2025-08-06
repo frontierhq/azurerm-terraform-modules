@@ -6,6 +6,11 @@ variable "administrator_password" {
   type = string
 }
 
+variable "delegated_subnet_id" {
+  type    = string
+  default = null
+}
+
 variable "environment" {
   type = string
 }
@@ -49,12 +54,17 @@ variable "metric_categories" {
 
 variable "postgres_version" {
   type    = string
-  default = "12"
+  default = "16"
 }
 
 variable "private_dns_zone_id" {
   type    = string
   default = null
+}
+
+variable "public_network_access_enabled" {
+  type    = bool
+  default = false
 }
 
 variable "resource_group_name" {
@@ -69,11 +79,6 @@ variable "sku_name" {
 variable "storage_mb" {
   type    = number
   default = 32768
-}
-
-variable "subnet_id" {
-  type    = string
-  default = null
 }
 
 variable "tags" {
