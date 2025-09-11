@@ -28,14 +28,14 @@ variable "log_categories" {
 variable "log_category_groups" {
   type = list(string)
   default = [
-    "Audit"
+    "Audit",
   ]
 }
 
 variable "metric_categories" {
   type = list(string)
   default = [
-    "AllMetrics"
+    "AllMetrics",
   ]
 }
 

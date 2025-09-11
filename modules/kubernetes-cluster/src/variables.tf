@@ -3,14 +3,24 @@ variable "admin_group_object_ids" {
   default = []
 }
 
+variable "auto_scaling_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "authorized_ip_ranges" {
   type    = list(string)
   default = []
 }
 
-variable "enable_auto_scaling" {
+variable "azure_policy_enabled" {
   type    = bool
   default = true
+}
+
+variable "cost_analysis_enabled" {
+  type    = bool
+  default = false
 }
 
 variable "environment" {
@@ -21,8 +31,24 @@ variable "identifier" {
   type = string
 }
 
+variable "identity" {
+  type = object({
+    type         = string
+    identity_ids = optional(list(string))
+  })
+  default = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
+}
+
 variable "kubernetes_version" {
   type = string
+}
+
+variable "load_balancer_sku" {
+  type    = string
+  default = "standard"
 }
 
 variable "location" {
@@ -37,20 +63,30 @@ variable "log_analytics_workspace_id" {
 variable "log_categories" {
   type = list(string)
   default = [
-    "kube-scheduler"
+    "kube-scheduler",
   ]
+}
+
+variable "log_category_groups" {
+  type    = list(string)
+  default = []
 }
 
 variable "metric_categories" {
   type = list(string)
   default = [
-    "AllMetrics"
+    "AllMetrics",
   ]
 }
 
 variable "network_plugin" {
   type    = string
-  default = "kubenet"
+  default = "azure"
+}
+
+variable "network_plugin_mode" {
+  type    = string
+  default = "overlay"
 }
 
 variable "network_policy" {
@@ -73,17 +109,43 @@ variable "node_min_count" {
   default = 1
 }
 
+variable "oidc_issuer_enabled" {
+  type    = bool
+  default = false
+}
+
 variable "outbound_type" {
   type    = string
   default = "loadBalancer"
+}
+
+variable "os_disk_size_gb" {
+  type    = number
+  default = 30
+}
+
+variable "os_disk_type" {
+  type    = string
+  default = "Ephemeral"
+}
+
+variable "os_sku" {
+  type    = string
+  default = "Ubuntu"
+}
+
+variable "pod_subnet_id" {
+  type    = string
+  default = null
 }
 
 variable "resource_group_name" {
   type = string
 }
 
-variable "subnet_id" {
-  type = string
+variable "sku_tier" {
+  type    = string
+  default = "Standard"
 }
 
 variable "tags" {
@@ -93,7 +155,24 @@ variable "tags" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_D2_v4"
+  default = "Standard_B4ms"
+}
+
+variable "vnet_subnet_id" {
+  type = string
+}
+
+variable "windows_profile" {
+  type = object({
+    admin_password = string
+    admin_username = string
+  })
+  default = null
+}
+
+variable "workload_identity_enabled" {
+  type    = bool
+  default = false
 }
 
 variable "zone" {

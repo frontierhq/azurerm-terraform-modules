@@ -13,7 +13,7 @@ module "kubernetes_cluster" {
 
   kubernetes_version         = "1.2.3"
   log_analytics_workspace_id = "baz"
-  subnet_id                  = "quux"
+  vnet_subnet_id             = "quux"
 
   tags = {
     Foo = "Bar"

@@ -7,21 +7,24 @@ resource "azurerm_data_factory" "main" {
   managed_virtual_network_enabled = var.managed_virtual_network_enabled
   public_network_enabled          = var.public_network_enabled
 
-  identity {
-    type         = length(var.identity_ids) > 0 ? "SystemAssigned, UserAssigned" : "SystemAssigned"
-    identity_ids = var.identity_ids
+  dynamic "identity" {
+    for_each = var.identity != null ? [var.identity] : []
+    content {
+      type         = identity.value.type
+      identity_ids = identity.value.identity_ids
+    }
   }
 
   dynamic "vsts_configuration" {
-    for_each = can(var.vsts_configuration["account_name"]) ? [{}] : []
+    for_each = var.vsts_configuration != null ? [var.vsts_configuration] : []
 
     content {
-      account_name    = var.vsts_configuration.account_name
-      branch_name     = var.vsts_configuration.branch_name
-      project_name    = var.vsts_configuration.project_name
-      repository_name = var.vsts_configuration.repository_name
-      root_folder     = var.vsts_configuration.root_folder
-      tenant_id       = var.vsts_configuration.tenant_id
+      account_name    = vsts_configuration.value.account_name
+      branch_name     = vsts_configuration.value.branch_name
+      project_name    = vsts_configuration.value.project_name
+      repository_name = vsts_configuration.value.repository_name
+      root_folder     = vsts_configuration.value.root_folder
+      tenant_id       = vsts_configuration.value.tenant_id
     }
   }
 
@@ -35,21 +38,23 @@ resource "azurerm_data_factory" "main" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "main" {
-  name                           = "log-analytics"
-  target_resource_id             = azurerm_data_factory.main.id
-  log_analytics_workspace_id     = var.log_analytics_workspace_id
-  log_analytics_destination_type = "AzureDiagnostics"
+  name                       = "log-analytics"
+  target_resource_id         = azurerm_data_factory.main.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
 
   dynamic "enabled_log" {
     for_each = var.log_categories
 
     content {
       category = enabled_log.value
+    }
+  }
 
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
+  dynamic "enabled_log" {
+    for_each = var.log_category_groups
+
+    content {
+      category_group = enabled_log.value
     }
   }
 
@@ -58,11 +63,6 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
 
     content {
       category = metric.value
-
-      retention_policy {
-        days    = 0
-        enabled = false
-      }
     }
   }
 }

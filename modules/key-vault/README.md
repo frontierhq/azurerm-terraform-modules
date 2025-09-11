@@ -6,15 +6,16 @@ This module creates a [Key Vault](https://registry.terraform.io/providers/hashic
 
 ```hcl
 module "key_vault" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/key-vault/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/key-vault/[VERSION]/module.tar.gz//src"
 
-  environment                = "dev"
-  identifier                 = "secrets"
-  location                   = "uksouth"
+  environment         = "dev"
+  identifier          = "secrets"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "shd"
+
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  resource_group_name        = module.resource_group.name
   tenant_id                  = data.azurerm_client_config.main.tenant_id
-  zone                       = "shd"
 
   tags = {
     WorkloadType = "Shared/bootstrap"
@@ -28,4 +29,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

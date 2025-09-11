@@ -1,0 +1,63 @@
+variable "environment" {
+  type = string
+}
+
+variable "identifier" {
+  type = string
+}
+
+variable "identity" {
+  type = object({
+    type         = string
+    identity_ids = optional(list(string))
+  })
+  default = {
+    type = "SystemAssigned"
+  }
+}
+
+variable "location" {
+  type = string
+}
+
+variable "log_analytics_workspace_id" {
+  type = string
+}
+
+# https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-automation-automationaccounts-logs
+variable "log_categories" {
+  type    = list(string)
+  default = []
+}
+
+variable "log_category_groups" {
+  type = list(string)
+  default = [
+    "audit"
+  ]
+}
+
+variable "metric_categories" {
+  type = list(string)
+  default = [
+    "AllMetrics",
+  ]
+}
+
+variable "resource_group_name" {
+  type = string
+}
+
+variable "sku_name" {
+  type    = string
+  default = "Basic"
+}
+
+variable "tags" {
+  type    = map(string)
+  default = {}
+}
+
+variable "zone" {
+  type = string
+}

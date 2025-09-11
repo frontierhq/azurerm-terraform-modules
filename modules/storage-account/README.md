@@ -6,14 +6,15 @@ This module creates a [Storage Account](https://registry.terraform.io/providers/
 
 ```hcl
 module "storage_account" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/storage-account/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/storage-account/[VERSION]/module.tar.gz//src"
 
-  environment                = "dev"
-  identifier                 = "blobstore"
-  location                   = "uksouth"
+  environment         = "dev"
+  identifier          = "blobstore"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "bus"
+
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  resource_group_name        = module.resource_group.name
-  zone                       = "bus"
 
   tags = {
     WorkloadType = "BusinessBankingLZ/document-service"
@@ -27,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

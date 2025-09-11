@@ -6,14 +6,15 @@ This module creates a [Data Factory](https://registry.terraform.io/providers/has
 
 ```hcl
 module "data_factory" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/data-factory/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/data-factory/[VERSION]/module.tar.gz//src"
 
-  environment                = "dev"
-  identifier                 = "mortgages"
-  location                   = "uksouth"
+  environment         = "dev"
+  identifier          = "mortgages"
+  location            = "uksouth"
+  resource_group_name = module.resource_group.name
+  zone                = "mtg"
+
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.main.id
-  resource_group_name        = module.resource_group.name
-  zone                       = "mtg"
 
   tags = {
     WorkloadType = "MortgagesLZ/data-platform"
@@ -27,4 +28,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.

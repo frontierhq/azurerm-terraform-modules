@@ -31,13 +31,13 @@ resource "azapi_update_resource" "main" {
   type        = "Microsoft.DBforMySQL/flexibleServers@2023-06-01-preview"
   resource_id = azurerm_mysql_flexible_server.main.id
 
-  body = jsonencode({
+  body = {
     properties = {
       network = {
         publicNetworkAccess = var.public_network_access ? "Enabled" : "Disabled"
       }
     }
-  })
+  }
 
   depends_on = [
     azurerm_mysql_flexible_server.main,

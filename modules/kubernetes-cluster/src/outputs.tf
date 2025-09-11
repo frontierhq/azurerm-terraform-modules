@@ -26,3 +26,7 @@ output "node_resource_group" {
 output "node_resource_group_id" {
   value = "${split(var.resource_group_name, azurerm_kubernetes_cluster.main.id)[0]}${azurerm_kubernetes_cluster.main.node_resource_group}"
 }
+
+output "oidc_issuer_url" {
+  value = azurerm_kubernetes_cluster.main.oidc_issuer_url
+}

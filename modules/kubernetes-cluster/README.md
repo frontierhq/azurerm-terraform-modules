@@ -6,7 +6,7 @@ This module creates a [Kubernetes Cluster](https://registry.terraform.io/provide
 
 ```hcl
 module "kubernetes_cluster" {
-  source = "https://github.com/gofrontier-com/azurerm-terraform-modules/releases/download/kubernetes-cluster/[VERSION]/module.tar.gz//src"
+  source = "https://github.com/frontierhq/azurerm-terraform-modules/releases/download/kubernetes-cluster/[VERSION]/module.tar.gz//src"
 
   environment         = "dev"
   identifier          = "creditcards"
@@ -30,4 +30,4 @@ _None._
 
 ## Contributing
 
-See <https://github.com/gofrontier-com/azurerm-terraform-modules/blob/main/README.rst#contributing>.
+See <https://github.com/frontierhq/azurerm-terraform-modules/blob/main/README.rst#contributing>.
