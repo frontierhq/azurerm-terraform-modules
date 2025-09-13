@@ -18,6 +18,10 @@ output "identity" {
   value = azurerm_linux_function_app.main.identity[*]
 }
 
+output "name" {
+  value = azurerm_linux_function_app.main.name
+}
+
 output "possible_outbound_ip_addresses" {
   value = azurerm_linux_function_app.main.possible_outbound_ip_addresses
 }

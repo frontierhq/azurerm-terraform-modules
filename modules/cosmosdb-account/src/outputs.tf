@@ -1,8 +1,3 @@
-output "connection_strings" {
-  value     = azurerm_cosmosdb_account.main.connection_strings
-  sensitive = true
-}
-
 output "endpoint" {
   value = azurerm_cosmosdb_account.main.endpoint
 }
@@ -20,8 +15,28 @@ output "primary_master_key" {
   sensitive = true
 }
 
+output "primary_mongodb_connection_string" {
+  value     = azurerm_cosmosdb_account.main.primary_mongodb_connection_string
+  sensitive = true
+}
+
 output "primary_readonly_master_key" {
   value     = azurerm_cosmosdb_account.main.primary_readonly_key
+  sensitive = true
+}
+
+output "primary_readonly_mongodb_connection_string" {
+  value     = azurerm_cosmosdb_account.main.primary_mongodb_connection_string
+  sensitive = true
+}
+
+output "primary_readonly_sql_connection_string" {
+  value     = azurerm_cosmosdb_account.main.primary_readonly_sql_connection_string
+  sensitive = true
+}
+
+output "primary_sql_connection_string" {
+  value     = azurerm_cosmosdb_account.main.primary_readonly_sql_connection_string
   sensitive = true
 }
 
@@ -34,8 +49,28 @@ output "secondary_master_key" {
   sensitive = true
 }
 
+output "secondary_mongodb_connection_string" {
+  value     = azurerm_cosmosdb_account.main.secondary_mongodb_connection_string
+  sensitive = true
+}
+
 output "secondary_readonly_master_key" {
   value     = azurerm_cosmosdb_account.main.secondary_readonly_key
+  sensitive = true
+}
+
+output "secondary_readonly_mongodb_connection_string" {
+  value     = azurerm_cosmosdb_account.main.secondary_mongodb_connection_string
+  sensitive = true
+}
+
+output "secondary_readonly_sql_connection_string" {
+  value     = azurerm_cosmosdb_account.main.secondary_readonly_sql_connection_string
+  sensitive = true
+}
+
+output "secondary_sql_connection_string" {
+  value     = azurerm_cosmosdb_account.main.secondary_sql_connection_string
   sensitive = true
 }
 

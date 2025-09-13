@@ -6,7 +6,7 @@ resource "azurerm_cosmosdb_account" "main" {
   kind                = var.kind
   tags                = merge(var.tags, local.tags)
 
-  enable_automatic_failover = true
+  automatic_failover_enabled = var.automatic_failover_enabled
 
   dynamic "capabilities" {
     for_each = var.capabilities
@@ -30,7 +30,7 @@ resource "azurerm_cosmosdb_account" "main" {
     }
   }
 
-  ip_range_filter = join(",", var.ip_range_filter)
+  ip_range_filter = var.ip_range_filter
 
   public_network_access_enabled         = var.public_network_access_enabled
   is_virtual_network_filter_enabled     = var.is_virtual_network_filter_enabled

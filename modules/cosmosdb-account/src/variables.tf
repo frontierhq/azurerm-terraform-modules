@@ -1,3 +1,8 @@
+variable "automatic_failover_enabled" {
+  type    = bool
+  default = null
+}
+
 variable "capabilities" {
   type    = list(string)
   default = []
@@ -6,11 +11,6 @@ variable "capabilities" {
 variable "consistency_level" {
   type    = string
   default = "BoundedStaleness"
-}
-
-variable "enable_automatic_failover" {
-  type    = bool
-  default = false
 }
 
 variable "environment" {

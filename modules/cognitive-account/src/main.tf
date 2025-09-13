@@ -1,5 +1,5 @@
 resource "azurerm_cognitive_account" "main" {
-  name                               = "cog-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  name                               = "ais-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   kind                               = var.kind
   location                           = var.location
   resource_group_name                = var.resource_group_name
