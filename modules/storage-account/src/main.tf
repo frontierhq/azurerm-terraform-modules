@@ -15,6 +15,16 @@ resource "azurerm_storage_account" "main" {
     }
   }
 
+  dynamic "blob_properties" {
+    for_each = var.blob_properties != null ? [var.blob_properties] : []
+    content {
+      delete_retention_policy {
+        days                     = lookup(blob_properties.value.delete_retention_policy.days, null)
+        permanent_delete_enabled = lookup(blob_properties.value.delete_retention_policy.permanent_delete_enabled, false)
+      }
+    }
+  }
+
   dynamic "static_website" {
     for_each = var.static_website != null ? [var.static_website] : []
     content {

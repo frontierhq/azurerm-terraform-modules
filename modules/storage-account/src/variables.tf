@@ -8,6 +8,16 @@ variable "account_replication_type" {
   default = "ZRS"
 }
 
+variable "blob_properties" {
+  type = object({
+    delete_retention_policy = object({
+      days                     = number
+      permanent_delete_enabled = optional(bool, false)
+    })
+  })
+  default = null
+}
+
 variable "custom_domain" {
   type = object({
     name          = string

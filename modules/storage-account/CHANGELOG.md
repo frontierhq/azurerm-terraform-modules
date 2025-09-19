@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2.1
+* Added support for blobs soft delete.
 * Added primary connection string output.
 
 ## 2.0
