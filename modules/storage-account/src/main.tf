@@ -19,8 +19,8 @@ resource "azurerm_storage_account" "main" {
     for_each = var.blob_properties != null ? [var.blob_properties] : []
     content {
       delete_retention_policy {
-        days                     = lookup(blob_properties.value.delete_retention_policy.days, null)
-        permanent_delete_enabled = lookup(blob_properties.value.delete_retention_policy.permanent_delete_enabled, false)
+        days                     = lookup(blob_properties.value.delete_retention_policy, "days", null)
+        permanent_delete_enabled = lookup(blob_properties.value.delete_retention_policy, "permanent_delete_enabled", false)
       }
     }
   }
