@@ -113,6 +113,7 @@ variable "site_config" {
     vnet_route_all_enabled                        = optional(bool, false)
     websockets_enabled                            = optional(bool, false)
     worker_count                                  = optional(number, null)
+    app_command_line                              = optional(string, null)
   })
   default = {}
 }
