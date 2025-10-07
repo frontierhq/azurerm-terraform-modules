@@ -18,6 +18,7 @@ resource "azurerm_linux_web_app" "main" {
     vnet_route_all_enabled                        = var.site_config.vnet_route_all_enabled
     websockets_enabled                            = var.site_config.websockets_enabled
     worker_count                                  = var.site_config.worker_count
+    app_command_line                              = var.site_config.app_command_line
 
     application_stack {
       docker_image_name   = local.application_stack["docker_image"]
