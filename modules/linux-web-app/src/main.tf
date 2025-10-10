@@ -45,6 +45,33 @@ resource "azurerm_linux_web_app" "main" {
     }
   }
 
+  dynamic "auth_settings_v2" {
+    for_each = var.auth_settings_v2 != null ? [var.auth_settings_v2] : []
+
+    content {
+      auth_enabled           = auth_settings_v2.value.auth_enabled
+      runtime_version        = auth_settings_v2.value.runtime_version
+      unauthenticated_action = auth_settings_v2.value.unauthenticated_action
+      require_authentication = auth_settings_v2.value.require_authentication
+
+      dynamic "login" {
+        for_each = auth_settings_v2.value.login != null ? [auth_settings_v2.value.login] : []
+        content {
+          token_store_enabled = login.value.token_store_enabled
+        }
+      }
+      dynamic "active_directory_v2" {
+        for_each = var.auth_settings_v2 != null && auth_settings_v2.value.active_directory_v2 != null ? [auth_settings_v2.value.active_directory_v2] : []
+
+        content {
+          client_id            = active_directory_v2.value.client_id
+          tenant_auth_endpoint = active_directory_v2.value.tenant_auth_endpoint
+          allowed_audiences    = active_directory_v2.value.allowed_audiences
+        }
+      }
+    }
+  }
+
   dynamic "identity" {
     for_each = var.identity != null ? [var.identity] : []
     content {

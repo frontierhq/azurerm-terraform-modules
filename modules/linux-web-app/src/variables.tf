@@ -10,6 +10,24 @@ variable "application_stack" {
   }
 }
 
+variable "auth_settings_v2" {
+  type = object({
+    auth_enabled           = bool
+    runtime_version        = string
+    unauthenticated_action = string
+    require_authentication = bool
+    login = optional(object({
+      token_store_enabled = optional(bool, null)
+    }), null)
+    active_directory_v2 = optional(object({
+      client_id            = string
+      tenant_auth_endpoint = string
+      allowed_audiences    = optional(list(string))
+    }), null)
+  })
+  default = null
+}
+
 variable "client_affinity_enabled" {
   type    = bool
   default = false
