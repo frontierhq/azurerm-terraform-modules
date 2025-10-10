@@ -67,7 +67,7 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
     }
   }
 
-  dynamic "metric" {
+  dynamic "enabled_metric" {
     for_each = var.metric_categories
 
     content {
