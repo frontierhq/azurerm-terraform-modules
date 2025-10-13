@@ -12,7 +12,9 @@ def get_tags():
 
 def get_modules(tags):
     modules = []
-    for dir in [f.path for f in os.scandir(os.path.join(os.getcwd(), "modules")) if f.is_dir()]:
+    for dir in [
+        f.path for f in os.scandir(os.path.join(os.getcwd(), "modules")) if f.is_dir()
+    ]:
         module_name = os.path.basename(dir)
         module_tags = list(filter(lambda tag: tag.startswith(module_name), tags))
 

@@ -1,5 +1,5 @@
 import os
-from helpers.test_terraform import test_terraform
+from py_utils import test_terraform
 
 
 if __name__ == "__main__":
