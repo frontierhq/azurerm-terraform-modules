@@ -13,17 +13,18 @@ variable "application_stack" {
 variable "auth_settings_v2" {
   type = object({
     auth_enabled           = bool
+    default_provider       = optional(string, null)
     runtime_version        = string
-    unauthenticated_action = string
+    unauthenticated_action = optional(string, null)
     require_authentication = bool
     login = optional(object({
       token_store_enabled = optional(bool, null)
     }), null)
     active_directory_v2 = optional(object({
       client_id                  = string
-      client_secret_setting_name = optional(string)
+      client_secret_setting_name = optional(string, null)
       tenant_auth_endpoint       = string
-      allowed_audiences          = optional(list(string))
+      allowed_audiences          = optional(list(string), null)
     }), null)
   })
   default = null

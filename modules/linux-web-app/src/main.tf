@@ -50,6 +50,7 @@ resource "azurerm_linux_web_app" "main" {
 
     content {
       auth_enabled           = auth_settings_v2.value.auth_enabled
+      default_provider       = auth_settings_v2.value.default_provider
       runtime_version        = auth_settings_v2.value.runtime_version
       unauthenticated_action = auth_settings_v2.value.unauthenticated_action
       require_authentication = auth_settings_v2.value.require_authentication
