@@ -64,9 +64,10 @@ resource "azurerm_linux_web_app" "main" {
         for_each = var.auth_settings_v2 != null && auth_settings_v2.value.active_directory_v2 != null ? [auth_settings_v2.value.active_directory_v2] : []
 
         content {
-          client_id            = active_directory_v2.value.client_id
-          tenant_auth_endpoint = active_directory_v2.value.tenant_auth_endpoint
-          allowed_audiences    = active_directory_v2.value.allowed_audiences
+          allowed_audiences          = active_directory_v2.value.allowed_audiences
+          client_id                  = active_directory_v2.value.client_id
+          client_secret_setting_name = active_directory_v2.value.client_secret_setting_name
+          tenant_auth_endpoint       = active_directory_v2.value.tenant_auth_endpoint
         }
       }
     }

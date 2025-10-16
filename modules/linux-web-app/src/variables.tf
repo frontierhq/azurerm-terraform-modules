@@ -20,9 +20,10 @@ variable "auth_settings_v2" {
       token_store_enabled = optional(bool, null)
     }), null)
     active_directory_v2 = optional(object({
-      client_id            = string
-      tenant_auth_endpoint = string
-      allowed_audiences    = optional(list(string))
+      client_id                  = string
+      client_secret_setting_name = optional(string)
+      tenant_auth_endpoint       = string
+      allowed_audiences          = optional(list(string))
     }), null)
   })
   default = null
