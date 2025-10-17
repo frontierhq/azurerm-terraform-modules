@@ -76,8 +76,8 @@ Modules
      - `2.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/cdn-profile%2F2.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/cdn-profile/2.0.1/module.tar.gz//src``
    * - `container-registry <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/container-registry>`__
-     - `1.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/container-registry%2F1.0.0>`__
-     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/container-registry/1.0.0/module.tar.gz//src``
+     - `1.0.4 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/container-registry%2F1.0.4>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/container-registry/1.0.4/module.tar.gz//src``
    * - `data-factory <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/data-factory>`__
      - `2.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/data-factory%2F2.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/data-factory/2.0.1/module.tar.gz//src``
@@ -112,8 +112,8 @@ Modules
      - `2.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/private-endpoint%2F2.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/private-endpoint/2.0.1/module.tar.gz//src``
    * - `public-ip <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/public-ip>`__
-     - `1.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/public-ip%2F1.0.0>`__
-     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/public-ip/1.0.0/module.tar.gz//src``
+     - `1.0.4 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/public-ip%2F1.0.4>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/public-ip/1.0.4/module.tar.gz//src``
    * - `resource-group <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/resource-group>`__
      - `2.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/resource-group%2F2.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/resource-group/2.0.1/module.tar.gz//src``
@@ -130,8 +130,8 @@ Modules
      - `3.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-network%2F3.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-network/3.0.1/module.tar.gz//src``
    * - `virtual-network-gateway <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/virtual-network-gateway>`__
-     - `2.0.0 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-network-gateway%2F2.0.0>`__
-     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-network-gateway/2.0.0/module.tar.gz//src``
+     - `2.0.4 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-network-gateway%2F2.0.4>`__
+     - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-network-gateway/2.0.4/module.tar.gz//src``
    * - `virtual-wan <https://github.com/frontierhq/azurerm-terraform-modules/tree/main/modules/virtual-wan>`__
      - `2.0.1 <https://github.com/frontierhq/azurerm-terraform-modules/releases/tag/virtual-wan%2F2.0.1>`__
      - ``https://github.com/frontierhq/azurerm-terraform-modules/releases/download/virtual-wan/2.0.1/module.tar.gz//src``
