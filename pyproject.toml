@@ -22,4 +22,4 @@ dev = [
 ]
 
 [tool.uv.sources]
-py-utils = { git = "https://github.com/frontierhq/py-utils.git", rev = "main" }
+py-utils = { git = "https://github.com/frontierhq/py-utils.git", rev = "0.2.1" }

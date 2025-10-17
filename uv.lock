@@ -24,7 +24,7 @@ dev = [
 requires-dist = [
     { name = "jinja2", specifier = ">=3.1.5" },
     { name = "packaging", specifier = ">=25.0" },
-    { name = "py-utils", git = "https://github.com/frontierhq/py-utils.git?rev=main" },
+    { name = "py-utils", git = "https://github.com/frontierhq/py-utils.git?rev=0.2.1" },
     { name = "python-terraform", specifier = ">=0.10.1,<0.11.0" },
 ]
 
@@ -212,7 +212,7 @@ wheels = [
 [[package]]
 name = "py-utils"
 version = "0.2.0"
-source = { git = "https://github.com/frontierhq/py-utils.git?rev=main#684931bb4b83f85c838ce0e97f24be8513fcfd98" }
+source = { git = "https://github.com/frontierhq/py-utils.git?rev=0.2.1#2a6ff9c720b56bf1ad80151b6969d7fc6d8b480c" }
 dependencies = [
     { name = "jinja2" },
     { name = "python-terraform" },
