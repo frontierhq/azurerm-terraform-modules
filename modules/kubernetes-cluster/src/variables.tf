@@ -42,6 +42,15 @@ variable "identity" {
   }
 }
 
+variable "kubelet_identity" {
+  type = object({
+    client_id                 = string
+    object_id                 = string
+    user_assigned_identity_id = string
+  })
+  default = null
+}
+
 variable "kubernetes_version" {
   type = string
 }
@@ -151,6 +160,11 @@ variable "sku_tier" {
 variable "tags" {
   type    = map(string)
   default = {}
+}
+
+variable "user_assigned_identity_principal_id" {
+  type    = string
+  default = null
 }
 
 variable "vm_size" {
