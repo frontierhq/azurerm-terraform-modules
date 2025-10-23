@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.2
+* Added option to disable public access via public_network_access_enabled. Defaults to true.
+
 ## 2.1
 * Added support for blobs soft delete.
 * Added primary connection string output.

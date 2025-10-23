@@ -3,9 +3,10 @@ resource "azurerm_storage_account" "main" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  account_tier             = var.account_tier
-  account_replication_type = var.account_replication_type
-  min_tls_version          = "TLS1_2"
+  account_tier                  = var.account_tier
+  account_replication_type      = var.account_replication_type
+  min_tls_version               = "TLS1_2"
+  public_network_access_enabled = var.public_network_access_enabled
 
   dynamic "custom_domain" {
     for_each = var.custom_domain != null ? [var.custom_domain] : []
