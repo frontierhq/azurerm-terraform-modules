@@ -101,6 +101,11 @@ variable "metric_categories" {
   ]
 }
 
+variable "public_network_access_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "resource_group_name" {
   type = string
 }

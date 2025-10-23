@@ -14,6 +14,7 @@ resource "azurerm_linux_function_app" "main" {
 
   client_certificate_exclusion_paths = var.client_certificate_exclusion_paths
   virtual_network_subnet_id          = var.virtual_network_subnet_id
+  public_network_access_enabled      = var.public_network_access_enabled
 
   tags = merge(var.tags, local.tags)
 
