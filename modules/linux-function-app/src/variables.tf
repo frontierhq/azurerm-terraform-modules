@@ -115,7 +115,8 @@ variable "service_plan_id" {
 }
 
 variable "storage_account_access_key" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "storage_account_name" {
@@ -124,7 +125,7 @@ variable "storage_account_name" {
 
 variable "storage_uses_managed_identity" {
   type    = bool
-  default = false
+  default = null
 }
 
 variable "tags" {
