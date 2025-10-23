@@ -3,12 +3,12 @@ resource "azurerm_key_vault" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  enable_rbac_authorization  = true
-  sku_name                   = var.sku_name
-  tenant_id                  = var.tenant_id
-  purge_protection_enabled   = var.purge_protection_enabled
-  soft_delete_retention_days = var.soft_delete_retention_days
-
+  enable_rbac_authorization     = true
+  sku_name                      = var.sku_name
+  tenant_id                     = var.tenant_id
+  purge_protection_enabled      = var.purge_protection_enabled
+  soft_delete_retention_days    = var.soft_delete_retention_days
+  public_network_access_enabled = var.public_network_access_enabled
   network_acls {
     bypass                     = var.bypass
     default_action             = var.default_action

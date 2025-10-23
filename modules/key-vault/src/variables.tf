@@ -49,6 +49,11 @@ variable "metric_categories" {
   ]
 }
 
+variable "public_network_access_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "purge_protection_enabled" {
   type    = bool
   default = false
