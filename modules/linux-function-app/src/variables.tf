@@ -123,11 +123,6 @@ variable "storage_account_name" {
   type = string
 }
 
-variable "storage_uses_managed_identity" {
-  type    = bool
-  default = null
-}
-
 variable "tags" {
   type    = map(string)
   default = {}

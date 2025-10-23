@@ -1,16 +1,15 @@
 resource "azurerm_linux_function_app" "main" {
-  name                          = "fn-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
-  location                      = var.location
-  resource_group_name           = var.resource_group_name
-  service_plan_id               = var.service_plan_id
-  storage_account_name          = var.storage_account_name
-  storage_account_access_key    = var.storage_account_access_key
-  storage_uses_managed_identity = var.storage_uses_managed_identity
-  functions_extension_version   = var.functions_extension_version
-  https_only                    = true
-  app_settings                  = var.app_settings
-  client_certificate_enabled    = var.client_certificate_enabled
-  client_certificate_mode       = var.client_certificate_mode
+  name                        = "fn-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
+  location                    = var.location
+  resource_group_name         = var.resource_group_name
+  service_plan_id             = var.service_plan_id
+  storage_account_name        = var.storage_account_name
+  storage_account_access_key  = var.storage_account_access_key
+  functions_extension_version = var.functions_extension_version
+  https_only                  = true
+  app_settings                = var.app_settings
+  client_certificate_enabled  = var.client_certificate_enabled
+  client_certificate_mode     = var.client_certificate_mode
 
   client_certificate_exclusion_paths = var.client_certificate_exclusion_paths
   virtual_network_subnet_id          = var.virtual_network_subnet_id
