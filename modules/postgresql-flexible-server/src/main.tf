@@ -3,13 +3,14 @@ resource "azurerm_postgresql_flexible_server" "main" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  administrator_login    = var.administrator_login
-  administrator_password = var.administrator_password
-  delegated_subnet_id    = var.subnet_id
-  private_dns_zone_id    = var.private_dns_zone_id
-  sku_name               = var.sku_name
-  storage_mb             = var.storage_mb
-  version                = var.postgres_version
+  administrator_login           = var.administrator_login
+  administrator_password        = var.administrator_password
+  delegated_subnet_id           = var.subnet_id
+  private_dns_zone_id           = var.private_dns_zone_id
+  sku_name                      = var.sku_name
+  storage_mb                    = var.storage_mb
+  version                       = var.postgres_version
+  public_network_access_enabled = var.public_network_access_enabled
 
   dynamic "high_availability" {
     for_each = var.high_availability_mode != null ? [{}] : []
