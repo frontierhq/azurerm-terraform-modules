@@ -148,6 +148,11 @@ variable "tags" {
   default = {}
 }
 
+variable "virtual_network_subnet_id" {
+  type    = string
+  default = null
+}
+
 variable "zone" {
   type = string
 }

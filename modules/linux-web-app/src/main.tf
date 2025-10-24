@@ -9,6 +9,7 @@ resource "azurerm_linux_web_app" "main" {
   app_settings                  = merge(local.app_settings, var.app_settings)
   client_affinity_enabled       = var.client_affinity_enabled
   public_network_access_enabled = var.public_network_access_enabled
+  virtual_network_subnet_id     = var.virtual_network_subnet_id
 
   site_config {
     container_registry_managed_identity_client_id = var.site_config.container_registry_managed_identity_client_id
