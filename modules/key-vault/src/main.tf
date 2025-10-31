@@ -9,11 +9,14 @@ resource "azurerm_key_vault" "main" {
   purge_protection_enabled   = var.purge_protection_enabled
   soft_delete_retention_days = var.soft_delete_retention_days
 
-  network_acls {
-    bypass                     = var.bypass
-    default_action             = var.default_action
-    ip_rules                   = var.ip_rules
-    virtual_network_subnet_ids = var.virtual_network_subnet_ids
+  dynamic "network_acls" {
+    for_each = var.public_network_access_enabled && var.bypass != "None" || local.has_ip_rules || local.has_subnets ? [1] : []
+    content {
+      bypass                     = var.bypass
+      default_action             = var.default_action
+      ip_rules                   = var.ip_rules
+      virtual_network_subnet_ids = var.virtual_network_subnet_ids
+    }
   }
 
   tags = merge(var.tags, local.tags)
