@@ -12,6 +12,6 @@ locals {
     Zone        = var.zone
   }
 
-  has_subnets  = coalescelist(var.virtual_network_subnet_ids, []) > 0
-  has_ip_rules = coalescelist(var.ip_rules, []) > 0
+  has_subnets  = length(coalescelist(var.virtual_network_subnet_ids, [])) > 0
+  has_ip_rules = length(coalescelist(var.ip_rules, [])) > 0
 }
