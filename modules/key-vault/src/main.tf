@@ -3,17 +3,20 @@ resource "azurerm_key_vault" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  enable_rbac_authorization     = true
-  sku_name                      = var.sku_name
-  tenant_id                     = var.tenant_id
-  purge_protection_enabled      = var.purge_protection_enabled
-  soft_delete_retention_days    = var.soft_delete_retention_days
-  public_network_access_enabled = var.public_network_access_enabled
-  network_acls {
-    bypass                     = var.bypass
-    default_action             = var.default_action
-    ip_rules                   = var.ip_rules
-    virtual_network_subnet_ids = var.virtual_network_subnet_ids
+  enable_rbac_authorization  = true
+  sku_name                   = var.sku_name
+  tenant_id                  = var.tenant_id
+  purge_protection_enabled   = var.purge_protection_enabled
+  soft_delete_retention_days = var.soft_delete_retention_days
+
+  dynamic "network_acls" {
+    for_each = var.public_network_access_enabled && var.bypass != "None" || local.has_ip_rules || local.has_subnets ? [1] : []
+    content {
+      bypass                     = var.bypass
+      default_action             = var.default_action
+      ip_rules                   = var.ip_rules
+      virtual_network_subnet_ids = var.virtual_network_subnet_ids
+    }
   }
 
   tags = merge(var.tags, local.tags)
