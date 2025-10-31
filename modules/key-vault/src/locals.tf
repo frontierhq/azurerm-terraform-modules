@@ -11,4 +11,7 @@ locals {
     Location    = var.location
     Zone        = var.zone
   }
+
+  has_subnets  = length(var.virtual_network_subnet_ids) > 0
+  has_ip_rules = length(var.ip_rules) > 0
 }

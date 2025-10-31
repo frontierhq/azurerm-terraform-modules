@@ -3,15 +3,26 @@ resource "azurerm_storage_account" "main" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  account_tier             = var.account_tier
-  account_replication_type = var.account_replication_type
-  min_tls_version          = "TLS1_2"
+  account_tier                  = var.account_tier
+  account_replication_type      = var.account_replication_type
+  min_tls_version               = "TLS1_2"
+  public_network_access_enabled = var.public_network_access_enabled
 
   dynamic "custom_domain" {
     for_each = var.custom_domain != null ? [var.custom_domain] : []
     content {
       name          = custom_domain.value.name
       use_subdomain = custom_domain.value.use_subdomain
+    }
+  }
+
+  dynamic "blob_properties" {
+    for_each = var.blob_properties != null ? [var.blob_properties] : []
+    content {
+      delete_retention_policy {
+        days                     = lookup(blob_properties.value.delete_retention_policy, "days", null)
+        permanent_delete_enabled = lookup(blob_properties.value.delete_retention_policy, "permanent_delete_enabled", false)
+      }
     }
   }
 

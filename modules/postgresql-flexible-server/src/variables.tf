@@ -57,6 +57,11 @@ variable "private_dns_zone_id" {
   default = null
 }
 
+variable "public_network_access_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "resource_group_name" {
   type = string
 }
