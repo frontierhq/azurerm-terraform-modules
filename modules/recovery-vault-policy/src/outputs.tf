@@ -1,7 +1,7 @@
 output "id" {
-  value = azurerm_recovery_vault_policy.main.id
+  value = azurerm_backup_policy_vm.main.id
 }
 
 output "name" {
-  value = azurerm_recovery_vault_policy.main.name
+  value = azurerm_backup_policy_vm.main.name
 }

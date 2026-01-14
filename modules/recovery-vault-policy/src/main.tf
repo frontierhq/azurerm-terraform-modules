@@ -1,4 +1,4 @@
-resource "azurerm_recovery_vault_policy" "main" {
+resource "azurerm_backup_policy_vm" "main" {
   name                = "pol-${var.vault_policy.policy_level}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}"
   resource_group_name = var.resource_group_name
   recovery_vault_name = var.recovery_vault_name
