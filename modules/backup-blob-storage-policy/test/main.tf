@@ -5,10 +5,10 @@ provider "azurerm" {
 module "backup_policy_blob_storage" {
   source = "../src"
 
-  environment    = "rnd"
-  identifier     = "identifier"
-  location       = "westeurope"
-  zone           = "zone1"
+  environment = "rnd"
+  identifier  = "identifier"
+  location    = "westeurope"
+  zone        = "zone1"
 
   backup_vault_id     = "bkp-test-name"
   resource_group_name = "rg-test-name"

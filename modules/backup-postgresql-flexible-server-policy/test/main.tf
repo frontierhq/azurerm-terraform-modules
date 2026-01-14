@@ -2,15 +2,34 @@ provider "azurerm" {
   features {}
 }
 
-module "resource_group" {
+module "backup_policy_postgresql_flexible_server" {
   source = "../src"
 
-  environment = "foo"
-  identifier  = "bar"
-  location    = "uksouth"
-  zone        = "baz"
+  environment = "rnd"
+  identifier  = "identifier"
+  location    = "westeurope"
+  zone        = "zone1"
+
+  backup_vault_id     = "bkp-test-id"
+  resource_group_name = "rg-test-name"
+
+  vault_policy = {
+    policy_level = "gold"
+    frequency    = "Daily" # Or "Weekly"
+    time         = "00:00"
+    timezone     = "UTC"
+
+    retention_daily_count   = 2
+    retention_weekly_count  = 2
+    retention_monthly_count = 5
+    retention_yearly_count  = 5
+
+    months   = ["January"]
+    weeks    = ["First"]
+    weekdays = ["Sunday"]
+  }
 
   tags = {
-    Foo = "Bar"
+    Key = "Value"
   }
 }
