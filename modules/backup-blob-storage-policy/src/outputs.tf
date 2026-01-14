@@ -1,7 +1,7 @@
 output "id" {
-  value = azurerm_resource_group.main.id
+  value = azurerm_data_protection_backup_policy_blob_storage.main.id
 }
 
 output "name" {
-  value = azurerm_resource_group.main.name
+  value = azurerm_data_protection_backup_policy_blob_storage.main.name
 }
