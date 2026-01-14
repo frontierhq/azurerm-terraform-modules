@@ -1,7 +1,7 @@
 resource "azurerm_data_protection_backup_policy_postgresql_flexible_server" "main" {
   name                            = replace("pol-${var.zone}-${var.environment}-${lookup(local.short_locations, var.location)}-${local.identifier}", "_", "-")
   vault_id                        = var.backup_vault_id
-  backup_repeating_time_intervals = ["R/${formatdate("YYYY-MM-DD", timestamp())}T${var.vault_policy.time}+00:00/P1W"]
+  backup_repeating_time_intervals = ["R/${formatdate("YYYY-MM-DD", timestamp())}T${var.vault_policy.time}+00:00/P1D"]
   time_zone                       = var.vault_policy.timezone
 
   default_retention_rule {
