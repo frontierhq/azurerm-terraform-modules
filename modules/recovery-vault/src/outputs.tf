@@ -1,7 +1,7 @@
 output "id" {
-  value = azurerm_resource_group.main.id
+  value = azurerm_recovery_services_vault.main.id
 }
 
 output "name" {
-  value = azurerm_resource_group.main.name
+  value = azurerm_recovery_services_vault.main.name
 }
