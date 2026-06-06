@@ -162,10 +162,6 @@ variable "tags" {
   default = {}
 }
 
-variable "user_assigned_identity_principal_id" {
-  type    = string
-  default = null
-}
 
 variable "vm_size" {
   type    = string

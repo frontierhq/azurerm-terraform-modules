@@ -57,7 +57,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   }
 
   dynamic "kubelet_identity" {
-    for_each = var.kubelet_identity == null ? [] : [var.kubelet_identity]
+    for_each = var.kubelet_identity != null ? [var.kubelet_identity] : []
     content {
       client_id                 = kubelet_identity.value.client_id
       object_id                 = kubelet_identity.value.object_id
@@ -129,11 +129,11 @@ resource "azurerm_monitor_diagnostic_setting" "main" {
 resource "azurerm_role_assignment" "identity_virtual_network_reader" {
   scope                = data.azurerm_virtual_network.main.id
   role_definition_name = "Reader"
-  principal_id         = var.identity.type == "UserAssigned" ? var.user_assigned_identity_principal_id : azurerm_kubernetes_cluster.main.identity[0].principal_id
+  principal_id         = local.cluster_identity_principal_id
 }
 
 resource "azurerm_role_assignment" "identity_virtual_network_network_contributor" {
   scope                = data.azurerm_virtual_network.main.id
   role_definition_name = "Network Contributor"
-  principal_id         = var.identity.type == "UserAssigned" ? var.user_assigned_identity_principal_id : azurerm_kubernetes_cluster.main.identity[0].principal_id
+  principal_id         = local.cluster_identity_principal_id
 }
