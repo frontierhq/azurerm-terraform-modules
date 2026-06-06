@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.2
+* Added Support for `User-Assigned` Managed Identity for AKS Cluster.
+
 ## 4.1
 * Added `oidc_issuer_enabled` and `workload_identity_enabled` variables to enable to use of workload identity.
 
